@@ -12,6 +12,32 @@
         <title>TUHUEVO</title>
     </head>
     <body>
+        <div id="pantalla-inicio" class="pantalla">
+            <h1>¡Gracias por adoptar responsablemente!</h1>
+            <img src="./images/bigeggy.png">
+            <h2>¿Cómo deseas llamar a TUHUEVO?</h2>
+            <p id="disponibilidad-nombre">El nombre debe ser unico</p>
+            <input type="text" id="name" required>
+            <button id="continuar-inicio" class="boton" disabled >Continuar</button>
+        </div>
+
+        <div id="pantalla-fecha" class="pantalla">
+            <h1>Ingresa tu fecha de nacimiento</h1>          
+            <h2>y recibirás 500 monedas de regalo</h2>
+            <img src="./images/coin.png">
+            <input type="date" id="fecha-nacimiento" required>
+            <button id="continuar-fecha" class="boton" disabled >Continuar</button>
+        </div>
+
+        <div id="gracias" class="pantalla">
+            <h1>¡Gracias!</h1>
+            <h3>Ahora podes usar <br>tus 500 monedas <img src="./images/coin.png"> <br>para mantener feliz a <span id="nombreMascota">NOMBRE</span></h3><br>
+            <h3>Comprale cosas para que su felicidad suba</h3><br>
+            <h3>Cada vez que rechazas algo, su felicidad desciende</h3>
+            
+        </div>
+
+
         <div id="todo">
             <div id="moneyActual"><h1>Money: </h1></div>
             <div id="felicidadActual"><h1>Happiness: </h1></div>
@@ -198,7 +224,7 @@
                 <div class="modal-card-content">
                     <p><b>¡SUSCRÍBETE A NUESTRO NEWSLETTER!</b></p><br>
                     <p>Comparte con nosotros tu <b>correo electrónico</b> a cambio de <b>100 monedas</b></p>
-                    <input type="email" id="email">
+                    <input type="email" id="email" required>
                 </div>
                 <div class="modal-card-button">
                     <button id="aceptar-mail">Continuar</button>

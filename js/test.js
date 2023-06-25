@@ -139,3 +139,57 @@ document.getElementById("ignorar-mail").onclick = function(feliciPrice){
     checkFelicidad()
 
 }
+
+
+/////PANTALLA INICIAL
+let inputNombre = document.getElementById('name')
+let btnContinuar = document.getElementById('continuar-inicio')
+let nombreMascotaSpan = document.getElementById('nombreMascota')
+
+inputNombre.addEventListener('input', function() {
+    btnContinuar.disabled = inputNombre.value.trim() === ''
+  });
+
+
+  btnContinuar.addEventListener('click', function() {
+    let disponibilidadNombre = document.getElementById('disponibilidad-nombre')
+    disponibilidadNombre.textContent = 'Este nombre está disponible'
+    disponibilidadNombre.classList.add('nombre-aceptado')
+
+    let nombreMascota = inputNombre.value.trim();
+    nombreMascotaSpan.textContent = nombreMascota
+
+    setTimeout(function(){
+        document.getElementById('pantalla-fecha').style.display='flex'
+        document.getElementById('pantalla-inicio').style.display='none'
+    }, 1000)
+  });
+
+  let inputFechaNacimiento = document.getElementById('fecha-nacimiento');
+  let btnFecha = document.getElementById('continuar-fecha');
+  inputFechaNacimiento.addEventListener('input', function() {
+    btnFecha.disabled = inputFechaNacimiento.value === '';
+  });
+
+  btnFecha.addEventListener('click', function() {
+    
+    let fechaNacimiento = inputFechaNacimiento.value;
+    price = 500
+    moneyActual =+ price
+    console.log(moneyActual)
+    moneyActualEl.textContent = "Money: " + moneyActual
+
+    setTimeout(function(){
+       document.getElementById('todo').style.display='flex'
+       document.getElementById('gracias').style.display='flex'
+       document.getElementById('pantalla-fecha').style.display='none'
+
+    }, 500)
+
+    setTimeout(function(){
+       
+        document.getElementById('gracias').style.display='none'
+        
+ 
+     }, 4000)
+  });
