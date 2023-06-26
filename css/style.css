@@ -5,22 +5,14 @@
     height: 100%;
     font-family: 'Raleway', sans-serif;
 }
-
-#moneyActual{
-    margin-top: 2%;
-    display: flex;
-    height: 5%;
-    font-size: 25px;
-    font-weight: bold;
+a{
+    text-decoration: none;
+    color: white !important;
 }
-
-#felicidadActual{
-    display: flex;
-    height: 5%;
-    font-size: 25px;
-    font-weight: bold;
+.button-blue{
+    background-color: #007AFF !important;
+    color: white !important;
 }
-
 .popup{
     font-size: 2.8vw;
     text-align: center;
@@ -48,7 +40,8 @@
     margin-top: 2vh;
 }
 .comprado{
-    filter: opacity(55%);
+    filter: opacity(100%) !important;
+    border: 2px solid #007AFF !important;
 }
 
 
@@ -146,6 +139,9 @@ body{
     height: 30vh;
 }
 .pantalla{
+    width: 80%;
+    position: absolute;
+    z-index: 10000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,11 +163,95 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
+#barra-superior{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 16%;
+    padding-top: 2vh;
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px black;
+    z-index: 1000;
+}
+#nombre-superior{
+    width: 100%;
+    height: 5vh;
+    padding-left: 10vw;
+    display: flex;
+    align-items: start;
+
+}
+#barra-superior img{
+    height: 10vh;
+}
+
+#elementos-superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#felicidadActual{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+    margin-right: 30%;
+}
+
+#moneyActual{
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    align-items: center;
+}
+
+#credit-pay{
+    position: absolute;
+    z-index: 10000;
+    display: none;
+    margin: 35% 5%;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    height: 50%;
+    width: 80%;
+}
+.pay-popup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+}
+.pay-popup h2{
+    height: 5vh;
+}
+.pay-popup h3{
+    font-weight: 400;
+    font-size: 14px;
+    height: 5vh;
+    margin-bottom: 3vh;
+}
+.pay-popup label{
+    height: 3vh;
+}
+.pay-popup input{
+    height: 5vh;
+    margin-bottom: 5vh;
+}
+#herramientas-happiness{
+    display: flex;
+    align-items: center;
 }
 #eggy{
     width: 100%;
-    height: 70%;
+    height: 64%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,7 +269,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 30%;
+    height: 20%;
     background: rgb(73,108,37);
     background: linear-gradient(0deg, rgba(73,108,37,1) 0%, rgba(85,127,43,0.8) 48%, rgba(255,255,255,0) 100%);
 }
@@ -207,49 +287,46 @@ body{
     align-items: center;
 }
 
+.menu{
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #D1D1D6;
+    border-radius: 2vh 2vh 0vh 0vh;
+}
+
+.menu img{
+    border-radius: 1vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 20vw;
+    width: 20vw;
+    margin: 1vw;
+    padding: 1vw;
+    border: 1px solid #D1D1D6;
+    
+}
 
 #inside-ropa{
     display: none;
     width: 100%;
-    height: 30%;
-    background-color: #deb887;
+    height: 20%;
     flex-wrap: wrap-reverse;
     justify-content: center;
     align-items: center;
 
 }
 
-#inside-ropa img{
-    height: 20vw;
-    width: 20vw;
-    background-color: #ad8653;
-    margin: 2vw;
-}
-
-
-
 #inside-sunglasses{
     display: none;
     width: 100%;
-    height: 30%;
-    background-color: #deb887;
+    height: 20%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-#inside-sunglasses img{
-    height: 20vw;
-    width: 20vw;
-    background-color: #ad8653;
-    margin: 2vw;
-}
-
 #inside-ribbon{
     display: none;
     width: 100%;
-    height: 30%;
-    background-color: #deb887;
+    height: 20%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -257,16 +334,12 @@ body{
 }
 
 #inside-ribbon img{
-    height: 20vw;
-    width: 20vw;
-    background-color: #ad8653;
-    margin: 2vw;
+    filter: opacity(55%);
 }
 
 .sinUsar-ribbon{
     display: none;
 }
-
 
 .modal{
     display: none; 
@@ -282,21 +355,20 @@ body{
 }
 
 .modal-content {
-    
     display: flex;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
-    margin: 5vh auto;
+    margin: 30% auto auto;
     padding: 20px;
     width: 80%;
-    height: 85%;
+    height: 70%;
     font-size: 14px;
     
   }
 
 .modal-header{
-    height: 40px;
+    height: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -329,7 +401,6 @@ body{
     border-radius: 7px;
     margin-top: 2vh;
     padding: 3vw;
-
   }
 
   

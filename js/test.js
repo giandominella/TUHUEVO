@@ -121,30 +121,92 @@ btnMonedas.onclick = function() {
     }
 }
 
-document.getElementById("aceptar-mail").onclick = function(price){
+document.getElementById("aceptar-email").onclick = function(price){
     menuMonedas.style.display = "none"
     price = 100
     moneyActual +=  price
-    moneyActualEl.textContent = "Money: " + moneyActual
+    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
     document.getElementById("email-card").style.display = "none"
 
 }
 
 
-document.getElementById("ignorar-mail").onclick = function(feliciPrice){
+document.getElementById("ignorar-email").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
     feliciPrice = 100
     felicidad -= feliciPrice
-    felicidadActualEl.textContent = "Happiness: " + felicidad
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
+    document.getElementById("email-card").style.display = "none"
+}
+
+document.getElementById("aceptar-twitter").onclick = function(price){
+    menuMonedas.style.display = "none"
+    price = 50
+    moneyActual +=  price
+    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+    document.getElementById("twitter-card").style.display = "none"
 
 }
+
+document.getElementById("ignorar-twitter").onclick = function(feliciPrice){
+    menuMonedas.style.display = "none"
+    feliciPrice = 50
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    document.getElementById("twitter-card").style.display = "none"
+
+}
+
+document.getElementById("aceptar-credit").onclick = function(price){
+    menuMonedas.style.display = "none"
+    document.getElementById("credit-card").style.display = "none"
+    document.getElementById("credit-pay").style.display = "flex"
+}
+
+document.getElementById("ignorar-credit").onclick = function(feliciPrice){
+    menuMonedas.style.display = "none"
+    feliciPrice = 50
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    //document.getElementById("credit-card").style.display = "none"
+
+}
+
+document.getElementById("aceptar-pay").onclick = function(price, feliciPrice){
+    menuMonedas.style.display = "none"
+    price = 1000
+    moneyActual +=  price
+    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+    feliciPrice = 200
+    felicidad += feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    document.getElementById("credit-pay").style.display = "none"
+}
+
+document.getElementById("ignorar-pay").onclick = function(feliciPrice){
+    menuMonedas.style.display = "none"
+    feliciPrice = 400
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    document.getElementById("credit-pay").style.display = "none"
+}
+
+
+/////
+let nombreSuperior = document.getElementById("nombre-superior")
+
 
 
 /////PANTALLA INICIAL
 let inputNombre = document.getElementById('name')
 let btnContinuar = document.getElementById('continuar-inicio')
 let nombreMascotaSpan = document.getElementById('nombreMascota')
+
 
 inputNombre.addEventListener('input', function() {
     btnContinuar.disabled = inputNombre.value.trim() === ''
@@ -158,6 +220,7 @@ inputNombre.addEventListener('input', function() {
 
     let nombreMascota = inputNombre.value.trim();
     nombreMascotaSpan.textContent = nombreMascota
+    nombreSuperior.textContent = nombreMascota
 
     setTimeout(function(){
         document.getElementById('pantalla-fecha').style.display='flex'
@@ -177,7 +240,7 @@ inputNombre.addEventListener('input', function() {
     price = 500
     moneyActual =+ price
     console.log(moneyActual)
-    moneyActualEl.textContent = "Money: " + moneyActual
+    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
 
     setTimeout(function(){
        document.getElementById('todo').style.display='flex'

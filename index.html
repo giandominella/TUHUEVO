@@ -37,10 +37,8 @@
             
         </div>
 
-
         <div id="todo">
-            <div id="moneyActual"><h1>Money: </h1></div>
-            <div id="felicidadActual"><h1>Happiness: </h1></div>
+            
             <div id="comprar-popup" class="popup">
                 <h2>¿Deseas comprar el siguiente objeto?</h2><br><h3>Valor: <span id="valor-ribbon"></span> monedas</h3>
                 <button id="btn-si">Si</button> 
@@ -50,6 +48,19 @@
                 <h2>No tenes tantas monedas para realizar esta compra</h2>
                 <button id="error-comprar">COMPRAR MÁS</button>
                 <button id="error-budget-btn">Odio a mi mascota</button>
+            </div>
+            <div id="barra-superior">
+
+                <div id="nombre-superior">
+                    <h3>Holitas</h3>
+                </div>
+                <div id="elementos-superior">
+                    <img src="./images/happy.png" id="herramientas-happiness">
+                    <div id="felicidadActual"><h3></h3></div>
+                    <img src="./images/coin.png" alt="">
+                    <div id="moneyActual"><h3></h3></div>
+                </div>
+
             </div>
             <div id="eggy">
                 <img src="./images/bigeggy1.png">
@@ -74,18 +85,19 @@
                 <div id="herramientas-monedas">
                     <img src="./images/coin.png" alt="">
                 </div>
-                <div id="herramientas-happiness">
-                    <img src="./images/happy.png" alt="">
+                <div id="herramientas-camara">
+                    <img src="./images/cam2.png">
                 </div>
+                
             </div>
 
-            <div id="inside-ropa">
+            <div id="inside-ropa" class="menu">
                 <img src="./images/back.png" id="back-ropa">
                 <img src="./images/ribbon.png" id="ribbon-button">
                 <img src="./images/sunglasses.png" id="sunglasses-button">
             </div>
             
-            <div id="inside-ribbon">
+            <div id="inside-ribbon" class="menu">
                 <img src="./images/back.png" id="back-ribbon" class="back-button">
                 <img src="./images/none.png" id="none-ribbon">
                 <img src="./images/ribbon.png" id="ribbon">
@@ -100,7 +112,7 @@
                 <img src="./images/ribbon_gold.png" id="ribbon-gold">
             </div>
             
-            <div id="inside-sunglasses">
+            <div id="inside-sunglasses" class="menu">
                 <img src="./images/back.png" id="back-sun">
                 <img src="./images/none.png" id="none-sun">
                 <img src="./images/sunglasses.png" id="sunglasses-black">
@@ -213,27 +225,72 @@
                 </div>
             </div>
 
-<div id="interior-monedas" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-        <p>TIENDA DE MONEDAS</p>
-        <span class="close" id="cerrar-monedas">&times;</span>
-        </div>
-        <div class="modal-allcards">
-            <div class="modal-card" id="email-card">
-                <div class="modal-card-content">
-                    <p><b>¡SUSCRÍBETE A NUESTRO NEWSLETTER!</b></p><br>
-                    <p>Comparte con nosotros tu <b>correo electrónico</b> a cambio de <b>100 monedas</b></p>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="modal-card-button">
-                    <button id="aceptar-mail">Continuar</button>
-                    <button id="ignorar-mail">Ignorar</button>
+            <div id="interior-monedas" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <p>TIENDA DE MONEDAS</p>
+                    <span class="close" id="cerrar-monedas">&times;</span>
+                    </div>
+                    <div class="modal-allcards">
+                        <div class="modal-card" id="email-card">
+                            <div class="modal-card-content">
+                                <p><b>¡SUSCRÍBETE A NUESTRO NEWSLETTER!</b></p><br>
+                                <p>Comparte con nosotros tu <b>correo electrónico</b> a cambio de <b>100 monedas</b></p>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="modal-card-button">
+                                <button id="aceptar-email" class="button-blue">Suscribite</button>
+                                <button id="ignorar-email">Ignorar</button>
+                            </div>
+                        </div>
+
+                        <div class="modal-card" id="twitter-card">
+                            <div class="modal-card-content">
+                                <p><b>¡SIGUENOS EN TWITTER!</b></p><br>
+                                <p>Dannos un <b>follow</b> en Twitter y te regalamos <b>50 monedas</b></p>
+                            </div>
+                            <div class="modal-card-button">
+                                <button id="aceptar-twitter" class="button-blue"><a href="https://twitter.com/home" target="_blank">Seguir a Twitter</a></button>
+                                <button id="ignorar-twitter">Ignorar</button>
+                            </div>
+                        </div>
+
+                        <div class="modal-card" id="credit-card">
+                            <div class="modal-card-content">
+                                <p><b>OBTIENE 1000 MONEDAS</b></p><br>
+                                <p>¿Necesitás <b>monedas</b>? Aprovecha esta oferta y compra <b>1000 monedas</b></p>
+                            </div>
+                            <div class="modal-card-button">
+                                <button id="aceptar-credit" class="button-blue">$9.99</button>
+                                <button id="ignorar-credit">Ignorar</button>
+                            </div>
+                        </div>
+
+                       
+
+
+                    </div>  
                 </div>
             </div>
-        </div>  
-    </div>
-</div>
+
+            <div class="modal-card" id="credit-pay">
+                    <div class="pay-popup">
+                        <h2>Confirmación de pago</h2>
+
+                        <h3>Ingresa el número y código de seguridad de tu tarjeta para efectuar la compra y mantener a TUHUEVO feliz</h3>
+                        <label for="text">Tarjeta:</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="**** **** **** 1234" value="**** **** **** 1234">
+                        <label for="password">Código de seguridad:</label>
+                        <input type="password" id="cvv" name="cvv" placeholder="352" value="352">
+                    </div>        
+                
+                <div class="modal-card-button">
+                    <button id="aceptar-pay" class="button-blue">Confirmar</button>
+                    <button id="ignorar-pay">Rechazar</button>
+                </div>
+            </div>
+
+
 
         </div>
         <script src="js/test.js"></script>

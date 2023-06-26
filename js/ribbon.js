@@ -69,7 +69,7 @@ ribbonRojoBoton.onclick = function(price){
             ribbonGoldHead.style.display = "none";
             
             moneyActual -=  price
-            moneyActualEl.textContent = "Money: " + moneyActual
+            moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none";
            
             ribbonRojoBoton.className = "comprado"
@@ -114,7 +114,7 @@ ribbonAquaBoton.onclick = function(price){
         ribbonGoldHead.style.display = "none";
 
         moneyActual -=  price
-        moneyActualEl.textContent = "Money: " + moneyActual
+        moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
         document.getElementById("comprar-popup").style.display = "none";
 
         ribbonAquaBoton.className = "comprado"
@@ -154,7 +154,7 @@ ribbonAzulBoton.onclick = function(price){
             ribbonGoldHead.style.display = "none";
 
             moneyActual -=  price
-            moneyActualEl.textContent = "Money: " + moneyActual
+            moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none";
 
             ribbonAzulBoton.className = "comprado"
@@ -194,7 +194,7 @@ ribbonVioletaBoton.onclick = function(price){
             ribbonGoldHead.style.display = "none";
 
             moneyActual -=  price
-            moneyActualEl.textContent = "Money: " + moneyActual
+            moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
             ribbonVioletaBoton.className = "comprado"
@@ -234,7 +234,7 @@ ribbonNaranjaBoton.onclick = function(price){
             ribbonGoldHead.style.display = "none";
 
             moneyActual -=  price
-            moneyActualEl.textContent = "Money: " + moneyActual
+            moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
             ribbonNaranjaBoton.className = "comprado"
@@ -279,12 +279,12 @@ ribbonGoldBoton.onclick = function(price, feliciPrice){
             ribbonGoldHead.style.display = "flex";
 
             moneyActual -=  price
-            moneyActualEl.textContent = "Money: " + moneyActual
+            moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
             feliciPrice = 100
             felicidad += feliciPrice
-            felicidadActualEl.textContent = "Happiness: " + felicidad
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
             checkFelicidad()
 
             ribbonGoldBoton.className = "comprado"
