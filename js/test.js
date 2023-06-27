@@ -174,18 +174,37 @@ document.getElementById("ignorar-credit").onclick = function(feliciPrice){
     //document.getElementById("credit-card").style.display = "none"
 
 }
+///////// ACEPTAR PAY
+let btnAceptarPay = document.getElementById("aceptar-pay")
+let inputTarjeta = document.getElementById("ccnum")
+let inputCodigo = document.getElementById("cvv")
+let tarjetaLabel = document.getElementById("tarjetaLabel")
+let codigoLabel = document.getElementById("codigoLabel")
 
-document.getElementById("aceptar-pay").onclick = function(price, feliciPrice){
+inputTarjeta.addEventListener('input', function() {
+    btnAceptarPay.disabled = inputTarjeta.value.trim() === ''
+    tarjetaLabel.classList.add('required')
+  });
+
+inputCodigo.addEventListener('input', function() {
+    btnAceptarPay.disabled = inputCodigo.value.trim() === ''
+    codigoLabel.classList.add('required')
+  });
+
+  btnAceptarPay.addEventListener('click', function(price, feliciPrice){
     menuMonedas.style.display = "none"
     price = 1000
     moneyActual +=  price
     moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+
     feliciPrice = 200
     felicidad += feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
+
     document.getElementById("credit-pay").style.display = "none"
-}
+  });
+
 
 document.getElementById("ignorar-pay").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"

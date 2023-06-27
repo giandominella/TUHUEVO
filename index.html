@@ -265,29 +265,40 @@
                                 <button id="ignorar-credit">Ignorar</button>
                             </div>
                         </div>
-
-                       
-
-
                     </div>  
                 </div>
             </div>
 
-            <div class="modal-card" id="credit-pay">
-                    <div class="pay-popup">
-                        <h2>Confirmación de pago</h2>
+            <div id="credit-pay" class="modal">
 
-                        <h3>Ingresa el número y código de seguridad de tu tarjeta para efectuar la compra y mantener a TUHUEVO feliz</h3>
-                        <label for="text">Tarjeta:</label>
-                        <input type="text" id="ccnum" name="cardnumber" placeholder="**** **** **** 1234" value="**** **** **** 1234">
-                        <label for="password">Código de seguridad:</label>
-                        <input type="password" id="cvv" name="cvv" placeholder="352" value="352">
-                    </div>        
-                
-                <div class="modal-card-button">
-                    <button id="aceptar-pay" class="button-blue">Confirmar</button>
-                    <button id="ignorar-pay">Rechazar</button>
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <p>Confirmación de pago</p>
+                        <span class="close">&times;</span>
+                    </div>
+
+                    <div class="inputs">
+                        <label for="text" id="tarjetaLabel">Tarjeta:</label><br>
+                        <input type="text" id="ccnum" placeholder="**** **** **** 1234">
+                    </div>
+
+                    <div class="inputs">
+                        <label for="password" id="codigoLabel">Código de seguridad:</label><br>
+                        <input type="password" id="cvv" placeholder="352">
+                    </div>
+
+                    <img src="./images/credit.png">
+
+                    <div class="modal-card-button">
+                        <button id="aceptar-pay" class="button-blue" disabled>Confirmar</button>
+                        <button id="ignorar-pay">Cancelar</button>
+                    </div>
+        
+
+
                 </div>
+
             </div>
 
 
