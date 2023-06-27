@@ -226,10 +226,10 @@ body{
     align-items: center;
 }
 
-#credit-pay img{
+#input-img{
     display: flex;
-    margin: 0px 15%;
-    width: fit-content;
+    justify-content: center;
+    width: 100%;
     height: 44%;
 }
 
