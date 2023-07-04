@@ -434,7 +434,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
+
+.modal-card-content img{
+    width: 32vw;
+    height: auto;
+}
 
 .modal-card-content b{
     font-weight: 600;
@@ -464,8 +469,8 @@ body{
 
 #dni img{
     transform: rotate(0.25turn);
-    width: max-content;
-    height: max-content;
+    width: 100vw;
+    height: 38vh;
 }
 #dni-btn {
     width: 100%;
