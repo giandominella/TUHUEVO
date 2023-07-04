@@ -343,25 +343,34 @@ document.getElementById("perfil-huevo-card").onclick = function(){
     document.getElementById('todo').style.display='none'
 }
 
-if(navigator.share){
-    let shareButton = document.getElementById("shareDNI");
+//// COMPARTIR DNI
+let shareButton = document.getElementById("shareDNI")
+shareButton.addEventListener('click', function(){
 
-    shareButton.addEventListener("click", function() {
-        document.getElementById("dni").style.display = "none"
-        document.getElementById('todo').style.display='flex'
+    let captureArea = document.getElementById("dni-caja")
 
-        navigator.share({
-            title: 'Titulo del enlace',
-            url: window.location.href
-        })
-        .then(function() {
-            console.log('Enlace compartido con exito');
-        })
-        .catch(function(error) {
-            console.error('Erorr al compartir enlace:', error);
-        });
-    });
-}
+    html2canvas(captureArea).then(function(canvas) {
+
+        let imageUrl = canvas.toDataURL();
+
+        if(navigator.share){
+
+            document.getElementById("dni").style.display = "none"
+            document.getElementById('todo').style.display='flex'
+    
+            navigator.share({
+                title: 'Titulo del enlace',
+                url: window.location.href
+            })
+            .then(function() {
+                console.log('Enlace compartido con exito');
+            })
+            .catch(function(error) {
+                console.error('Erorr al compartir enlace:', error);
+            });
+        }
+    })
+})
 
 /*
 document.getElementById("shareDNI").onclick = function(){
