@@ -57,7 +57,7 @@ body{
 }
 
 #pantalla-inicio{
-    display: none; 
+    display: flex; 
 }
 
 #pantalla-inicio h1{
@@ -169,7 +169,7 @@ body{
 }
 
 #todo{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
