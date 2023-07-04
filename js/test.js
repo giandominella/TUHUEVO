@@ -354,13 +354,11 @@ shareButton.addEventListener('click', function(){
         let imageUrl = canvas.toDataURL();
 
         if(navigator.share){
-
-            document.getElementById("dni").style.display = "none"
-            document.getElementById('todo').style.display='flex'
     
             navigator.share({
-                title: 'Titulo del enlace',
-                url: window.location.href
+                title: 'Compartir captura de pantalla',
+                text: "Echa un vistazo a esta captura de pantalla",
+                url: imageUrl
             })
             .then(function() {
                 console.log('Enlace compartido con exito');
