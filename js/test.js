@@ -121,6 +121,7 @@ btnMonedas.onclick = function() {
     }
 }
 
+//// monedas-email
 document.getElementById("aceptar-email").onclick = function(price){
     menuMonedas.style.display = "none"
     price = 100
@@ -130,7 +131,6 @@ document.getElementById("aceptar-email").onclick = function(price){
 
 }
 
-
 document.getElementById("ignorar-email").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
     feliciPrice = 100
@@ -139,7 +139,7 @@ document.getElementById("ignorar-email").onclick = function(feliciPrice){
     checkFelicidad()
     document.getElementById("email-card").style.display = "none"
 }
-
+//// monedas-twitter
 document.getElementById("aceptar-twitter").onclick = function(price){
     menuMonedas.style.display = "none"
     price = 50
@@ -158,7 +158,7 @@ document.getElementById("ignorar-twitter").onclick = function(feliciPrice){
     document.getElementById("twitter-card").style.display = "none"
 
 }
-
+//// monedas-credit
 document.getElementById("aceptar-credit").onclick = function(price){
     menuMonedas.style.display = "none"
     document.getElementById("credit-card").style.display = "none"
@@ -174,24 +174,37 @@ document.getElementById("ignorar-credit").onclick = function(feliciPrice){
     //document.getElementById("credit-card").style.display = "none"
 
 }
-///////// ACEPTAR PAY
+//ACEPTAR PAY
 let btnAceptarPay = document.getElementById("aceptar-pay")
 let inputTarjeta = document.getElementById("ccnum")
 let inputCodigo = document.getElementById("cvv")
 let tarjetaLabel = document.getElementById("tarjetaLabel")
 let codigoLabel = document.getElementById("codigoLabel")
+let cerrarCredit = document.getElementById("cerrar-credit")
 
 inputTarjeta.addEventListener('input', function() {
     btnAceptarPay.disabled = inputTarjeta.value.trim() === ''
     tarjetaLabel.classList.add('required')
+
+    /*if(btnAceptarPay.disabled = inputTarjeta.value.trim() != ''){
+        tarjetaLabel.classList.remove('required')
+        tarjetaLabel.classList.add('nombre-aceptado')
+    }*/
+
   });
 
 inputCodigo.addEventListener('input', function() {
     btnAceptarPay.disabled = inputCodigo.value.trim() === ''
     codigoLabel.classList.add('required')
+
+   /* if(btnAceptarPay.disabled = inputCodigo.value.trim() != ''){
+        codigoLabel.classList.remove('required')
+        codigoLabel.classList.add('nombre-aceptado')
+    }*/
+
   });
 
-  btnAceptarPay.addEventListener('click', function(price, feliciPrice){
+btnAceptarPay.addEventListener('click', function(price, feliciPrice){    
     menuMonedas.style.display = "none"
     price = 1000
     moneyActual +=  price
@@ -215,10 +228,39 @@ document.getElementById("ignorar-pay").onclick = function(feliciPrice){
     document.getElementById("credit-pay").style.display = "none"
 }
 
+cerrarCredit.onclick = function() {
+    menuMonedas.style.display = "flex"
+    document.getElementById("credit-pay").style.display = "none"
+  }
+
+//// monedas-mic
+document.getElementById("aceptar-mic").onclick = function(price){
+    menuMonedas.style.display = "none"
+    document.getElementById("mic-card").style.display = "none"
+    document.getElementById("mic-popup").style.display = "flex"
+}
+
+document.getElementById("ignorar-mic").onclick = function(feliciPrice){
+    menuMonedas.style.display = "none"
+}
+
+document.getElementById("btn-si-mic").onclick = function(price){
+    price = 500
+    moneyActual +=  price
+    moneyActualEl.textContent = moneyActual
+    document.getElementById("mic-popup").style.display = 'none'
+}
+
+document.getElementById("btn-no-mic").onclick = function(price){
+    feliciPrice = 100
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    document.getElementById("mic-popup").style.display = 'none'
+}
 
 /////
 let nombreSuperior = document.getElementById("nombre-superior")
-
 
 
 /////PANTALLA INICIAL
@@ -275,3 +317,55 @@ inputNombre.addEventListener('input', function() {
  
      }, 4000)
   });
+
+///// MENU FOTOS
+
+let menuFotos = document.getElementById("interior-fotos")
+let btnFotos = document.getElementById("herramientas-fotos")
+let cerrarFotos = document.getElementById("cerrar-fotos")
+
+btnFotos.onclick = function() {
+    menuFotos.style.display = "block";
+  }
+
+  cerrarFotos.onclick = function() {
+    menuFotos.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == menuFotos) {
+        menuFotos.style.display = "none";
+    }
+}
+
+document.getElementById("perfil-huevo-card").onclick = function(){
+    document.getElementById("dni").style.display = "flex"
+    document.getElementById('todo').style.display='none'
+}
+
+if(navigator.share){
+    let shareButton = document.getElementById("shareDNI");
+
+    shareButton.addEventListener("click", function() {
+        document.getElementById("dni").style.display = "none"
+        document.getElementById('todo').style.display='flex'
+
+        navigator.share({
+            title: 'Titulo del enlace',
+            url: window.location.href
+        })
+        .then(function() {
+            console.log('Enlace compartido con exito');
+        })
+        .catch(function(error) {
+            console.error('Erorr al compartir enlace:', error);
+        });
+    });
+}
+
+/*
+document.getElementById("shareDNI").onclick = function(){
+    document.getElementById("dni").style.display = "none"
+    document.getElementById('todo').style.display='flex'
+}*/
+

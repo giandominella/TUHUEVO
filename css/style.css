@@ -28,16 +28,22 @@ a{
     /*overflow: visible*/
     align-items: center;
 }
-.popup button{
-    border: solid 1px #D1D1D6;
+.popup-btn{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
     width: 100%;
+}
+.popup button{
+
+    border: solid 1px #D1D1D6;
+    width: 50%;
     background-color: white;
     color: #007AFF;
     padding: 13px 0px;
 }
 #btn-si{
     font-weight: 600;
-    margin-top: 2vh;
 }
 .comprado{
     filter: opacity(100%) !important;
@@ -312,6 +318,13 @@ body{
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #D1D1D6;
     border-radius: 2vh 2vh 0vh 0vh;
+    display: none;
+    width: 100%;
+    height: 20%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
 }
 
 .menu img{
@@ -322,41 +335,22 @@ body{
     margin: 1vw;
     padding: 1vw;
     border: 1px solid #D1D1D6;
-    
 }
 
-#inside-ropa{
-    display: none;
-    width: 100%;
-    height: 20%;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-    align-items: center;
+.back-key{
+    width: auto !important;
+    height: 7% !important;
+    position: absolute;
+    z-index: 1000;
+    filter: opacity(100%) !important;
+    top:71%; left: 0%;
 
-}
-
-#inside-sunglasses{
-    display: none;
-    width: 100%;
-    height: 20%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#inside-ribbon{
-    display: none;
-    width: 100%;
-    height: 20%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    overflow: scroll;
 }
 
 #inside-ribbon img{
     filter: opacity(55%);
 }
+
 
 .sinUsar-ribbon{
     display: none;
@@ -424,7 +418,17 @@ body{
     padding: 3vw;
   }
 
-  
+.card-box{
+    width: 40%;
+  }
+
+.box-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .modal-card-content{
     height: fit-content;
     display: flex;
@@ -441,6 +445,54 @@ body{
     height: auto;
     margin-top: 2vw;
 }
+
+#dni{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);  
+    backdrop-filter: blur(5px);
+}
+#dni-caja{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dni img{
+    transform: rotate(0.25turn);
+    width: max-content;
+    height: max-content;
+}
+#dni-btn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+#dni button{
+    border: none;
+    border-radius: 1vw;
+    width: 50%;
+    height: 5vh;
+}
+
+.modal-card-box-button button{
+    width: 100%;
+    height: auto;
+    margin-top: 2vw;
+    border-radius: 5px;
+    border: solid 1px #D1D1D6;
+    width: 100%;
+    background-color: white;
+    color: #007AFF;
+    padding: 8px 0px;
+}
+
 
 .modal-card-button button{
     border-radius: 5px;

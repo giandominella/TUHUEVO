@@ -41,13 +41,17 @@
             
             <div id="comprar-popup" class="popup">
                 <h2>¿Deseas comprar el siguiente objeto?</h2><br><h3>Valor: <span id="valor-ribbon"></span> monedas</h3>
-                <button id="btn-si">Si</button> 
-                <button id="btn-no">No</button>
+                <div class="popup-btn">
+                    <button id="btn-si">Si</button> 
+                    <button id="btn-no">No</button>
+                </div>
             </div>
             <div id="error-budget" class="popup">
                 <h2>No tenes tantas monedas para realizar esta compra</h2>
-                <button id="error-comprar">COMPRAR MÁS</button>
-                <button id="error-budget-btn">Odio a mi mascota</button>
+                <div class="popup-btn">
+                    <button id="error-comprar">COMPRAR MÁS</button>
+                    <button id="error-budget-btn">Odio a mi mascota</button>
+                </div>
             </div>
             <div id="barra-superior">
 
@@ -85,20 +89,23 @@
                 <div id="herramientas-monedas">
                     <img src="./images/coin.png" alt="">
                 </div>
-                <div id="herramientas-camara">
+                <div id="herramientas-fotos">
                     <img src="./images/cam2.png">
                 </div>
                 
             </div>
 
-            <div id="inside-ropa" class="menu">
-                <img src="./images/back.png" id="back-ropa">
-                <img src="./images/ribbon.png" id="ribbon-button">
-                <img src="./images/sunglasses.png" id="sunglasses-button">
+           <div id="inside-ropa" class="menu">
+                    <img src="./images/back.png" id="back-ropa" class="back-key">
+                    <img src="./images/ribbon.png" id="ribbon-button">
+                    <img src="./images/sunglasses.png" id="sunglasses-button">
+                    <img src="./images/sunglasses.png" >
+                    <img src="./images/sunglasses.png" >
+                    <img src="./images/sunglasses.png" >
             </div>
             
             <div id="inside-ribbon" class="menu">
-                <img src="./images/back.png" id="back-ribbon" class="back-button">
+                <img src="./images/back.png" id="back-ribbon" class="back-key">
                 <img src="./images/none.png" id="none-ribbon">
                 <img src="./images/ribbon.png" id="ribbon">
                 <img src="./images/ribbon_aqua.png" id="ribbon-aqua" >
@@ -113,7 +120,7 @@
             </div>
             
             <div id="inside-sunglasses" class="menu">
-                <img src="./images/back.png" id="back-sun">
+                <img src="./images/back.png" id="back-sun" class="back-key" >
                 <img src="./images/none.png" id="none-sun">
                 <img src="./images/sunglasses.png" id="sunglasses-black">
                 <img src="./images/sunglasses__gold.png" id="sunglasses-gold">
@@ -265,49 +272,107 @@
                                 <button id="ignorar-credit">Ignorar</button>
                             </div>
                         </div>
+
+                        <div class="modal-card" id="mic-card">
+                            <div class="modal-card-content">
+                                <p><b>OBTIENE 500 MONEDAS</b></p><br>
+                                <p>Comparte tu <b>micrófono</b> con TUHUEVO y recibirás <b>500 monedas</b></p>
+                            </div>
+                            <div class="modal-card-button">
+                                <button id="aceptar-mic" class="button-blue">Compartir</button>
+                                <button id="ignorar-mic">Ignorar</button>
+                            </div>
+                        </div>
                     </div>  
                 </div>
             </div>
 
             <div id="credit-pay" class="modal">
-
                 <div class="modal-content">
 
                     <div class="modal-header">
                         <p>Confirmación de pago</p>
-                        <span class="close">&times;</span>
+                        <span class="close" id="cerrar-credit">&times;</span>
                     </div>
 
                     <div class="inputs">
                         <label for="text" id="tarjetaLabel">Tarjeta:</label><br>
                         <input type="text" id="ccnum" placeholder="**** **** **** 1234">
                     </div>
-
                     <div class="inputs">
                         <label for="password" id="codigoLabel">Código de seguridad:</label><br>
                         <input type="password" id="cvv" placeholder="352">
                     </div>
-
                     <div id="input-img">
                         <img src="./images/credit.png">
                     </div>
-
-                    
-
                     <div class="modal-card-button">
                         <button id="aceptar-pay" class="button-blue" disabled>Confirmar</button>
                         <button id="ignorar-pay">Cancelar</button>
                     </div>
-        
-
-
                 </div>
-
             </div>
+
+            <div id="mic-popup" class="popup">
+                <h2>"TUHUEVO" quiere acceder al micrófono</h2><br><h3>Permite enviar videos y notas de audio <br>utilizando tu voz</h3>
+                <div class="popup-btn">
+                    <button id="btn-si-mic">Permitir</button> 
+                    <button id="btn-no-mic">No permitir</button>
+                </div>
+            </div>
+
+            <div id="interior-fotos" class="modal">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                    <p>Perfil personal</p>
+                    <span class="close" id="cerrar-fotos">&times;</span>
+                    </div>
+                    <div class="modal-allcards box-content">
+
+                        <div class="modal-card card-box" id="perfil-huevo-card">
+                            <div class="modal-card-content">
+                                <img src="./images/id.png">
+                            </div>
+                            <div class="modal-card-box-button">
+                                <button id="aceptar-dni" class="button-blue">DNI de TUHUEVO</button>
+                            </div>
+                        </div>
+
+                        <div class="modal-card card-box" id="perfil-huevo-card">
+                            <div class="modal-card-content">
+                                <p><b>¡SUSCRÍBETE A NUESTRO NEWSLETTER!</b></p><br>
+                                
+                                <p>Comparte con nosotros tu <b>correo electrónico</b> a cambio de <b>100 monedas</b></p>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="modal-card-button">
+                                <button id="aceptar-email" class="button-blue">Suscribite</button>
+                                <button id="ignorar-email">Ignorar</button>
+                            </div>
+                        </div>
+
+                    </div>  
+                </div>
+            </div>
+
+           
+
+
+            
 
 
 
         </div>
+
+        <div id="dni">
+            <div id="dni-caja">
+                <img src="./images/DNI.png">
+            </div>
+            <div id="dni-btn">
+                <button id="shareDNI" class="button-blue">Compartir</button>
+            </div>
+        </div>
+
         <script src="js/test.js"></script>
         <script src="js/ribbon.js"></script>
     </body>
