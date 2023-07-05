@@ -289,6 +289,7 @@ body{
 }
 
 #eggy-features{
+    z-index: 1;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
@@ -298,7 +299,7 @@ body{
 }
 
 #eggy-hats{
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
@@ -308,7 +309,7 @@ body{
 }
 
 #eggy-eyes{
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
