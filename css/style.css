@@ -5,59 +5,17 @@
     height: 100%;
     font-family: 'Raleway', sans-serif;
 }
-a{
-    text-decoration: none;
-    color: white !important;
-}
-.button-blue{
-    background-color: #007AFF !important;
-    color: white !important;
-}
-.popup{
-    font-size: 2.8vw;
-    text-align: center;
-    position: absolute;
-    z-index: 4000;
-    display: none;
+
+#todo{
+    display: flex;  
     flex-direction: column;
-    width: 90%;
-    border-radius: 10px;
-    padding-top: 20px;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    /*overflow: visible*/
     align-items: center;
-}
-.popup-btn{
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-.popup button{
-
-    border: solid 1px #D1D1D6;
-    width: 50%;
-    background-color: white;
-    color: #007AFF;
-    padding: 13px 0px;
-}
-#btn-si{
-    font-weight: 600;
-}
-.comprado{
-    filter: opacity(100%) !important;
-    border: 2px solid #007AFF !important;
+    justify-content: center;
 }
 
-
-body{
-    background-image: url(../images/grass-bg.jpg);
-    background-size: 150%;
-}
 
 #pantalla-inicio{
-    display: flex; 
+    display: none; 
 }
 
 #pantalla-inicio h1{
@@ -93,6 +51,58 @@ body{
 
 #continuar-inicio{
     height: 30vh;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: white !important;
+}
+.button-blue{
+    background-color: #007AFF !important;
+    color: white !important;
+}
+.popup{
+    font-size: 2.8vw;
+    text-align: center;
+    position: absolute;
+    z-index: 4000;
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+    padding-top: 20px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    /*overflow: visible*/
+    align-items: center;
+}
+.popup-btn{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.popup button{
+    border: solid 1px #D1D1D6;
+    width: 50%;
+    background-color: white;
+    color: #007AFF;
+    padding: 13px 0px;
+}
+#btn-si{
+    font-weight: 600;
+}
+.comprado{
+    filter: opacity(100%) !important;
+    border: 2px solid #007AFF !important;
+}
+
+
+body{
+    background-image: url(../images/grass-bg.jpg);
+    background-size: 150%;
 }
 
 #pantalla-fecha{
@@ -168,12 +178,7 @@ body{
     
 }
 
-#todo{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 #barra-superior{
     align-items: center;
@@ -182,7 +187,7 @@ body{
     justify-content: center;
     color: white;
     width: 100%;
-    height: 16%;
+    height: 14%;
     padding-top: 2vh;
     font-weight: bolder;
     text-shadow: 1px 1px 2px black;
@@ -276,17 +281,44 @@ body{
     display: flex;
     align-items: center;
 }
+
 #eggy{
-    width: 100%;
-    height: 64%;
+    width: 100% !important;
+    height: 64% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#eggy-features{
+    position: absolute;
+    width: 100% !important;
+    height: 64% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#eggy-hats{
+    position: absolute;
+    width: 100% !important;
+    height: 64% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#eggy-eyes{
+    position: absolute;
+    width: 100% !important;
+    height: 64% !important;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #eggy img{
-    height: 60%;
-    width: auto;
+    height: 100% !important;
     position: absolute;
 }
 
@@ -350,7 +382,6 @@ body{
 #inside-ribbon img{
     filter: opacity(55%);
 }
-
 
 .sinUsar-ribbon{
     display: none;
@@ -416,11 +447,8 @@ body{
     border-radius: 7px;
     margin-top: 2vh;
     padding: 3vw;
-  }
+}
 
-.card-box{
-    width: 40%;
-  }
 
 .box-content{
     display: flex;
@@ -449,6 +477,48 @@ body{
     width: 100%;
     height: auto;
     margin-top: 2vw;
+}
+
+.carta{
+    width: 47%;
+    height: fit-content;
+    font-weight: 400;
+    border-radius: 7px;
+    margin-top: 2vh;
+    background-color: rgba(255, 255, 255,0.7);
+}
+
+.carta-cont{
+    padding: 3vw;
+    height: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.carta-cont img{
+    width: 110px;
+    height: auto;
+}
+
+.carta-btn{
+    width: 100%;
+    height: auto;
+}
+
+.carta-btn button{
+    width: 100%;
+    height: auto;
+    border-radius: 0px 0px 5px 5px;
+    border: solid 1px #D1D1D6;
+    width: 100%;
+    background-color: white;
+    color: #007AFF;
+    padding: 8px 0px;
+}
+
+.not-available{
+    filter: opacity(55%) grayscale(100%);
 }
 
 #dni{
@@ -486,19 +556,6 @@ body{
     height: 5vh;
 }
 
-.modal-card-box-button button{
-    width: 100%;
-    height: auto;
-    margin-top: 2vw;
-    border-radius: 5px;
-    border: solid 1px #D1D1D6;
-    width: 100%;
-    background-color: white;
-    color: #007AFF;
-    padding: 8px 0px;
-}
-
-
 .modal-card-button button{
     border-radius: 5px;
     border: solid 1px #D1D1D6;
@@ -515,3 +572,53 @@ body{
     border-radius: 5px;
     border: solid 1px #D1D1D6;
 }
+
+#money-notif{
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    right: 4%;
+    top: 2%;
+    color: black !important;
+    text-shadow: none !important;
+    z-index: 10000;
+    position: absolute;
+    height: 3%;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 0vh 2vw;
+}
+
+#notif-left {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+#notif-left img{
+    width: auto !important;
+    height: 70% !important;
+    margin-right: 2vw;
+}
+
+#notif-right p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cuanto-gano{
+    font-weight: 600;
+}
+#back-dni {
+    width: 10vw !important;
+    margin-right: 5vw;
+}
+#back-dni img{
+    height: 5vh;
+    width: 5vh;
+    transform: rotate(1turn);
+}
+
+
+  

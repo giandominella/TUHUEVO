@@ -10,18 +10,36 @@ let caraFeliz = document.getElementById('cara-feliz')
 let caraTriste = document.getElementById('cara-triste')
 
 function checkFelicidad(){
-if( felicidad >= 200){
-    caraFeliz.style.display = "flex"
-    caraTriste.style.display = "none"
-} 
-if (felicidad < 200) {
-    caraFeliz.style.display = "none"
-    caraTriste.style.display = "flex"
-}
+    if( felicidad >= 200){
+        caraFeliz.style.display = "flex"
+        caraTriste.style.display = "none"
+    } 
+    if (felicidad < 200) {
+        caraFeliz.style.display = "none"
+        caraTriste.style.display = "flex"
+    }
 }
 checkFelicidad()
 
+function reduceFelicidad(){
+    let eggyFeatures = document.getElementById("eggy-features")
+    let eggyHats = document.getElementById("eggy-hats")
+    let eggyEyes =  document.getElementById("eggy-eyes")
+
+    eggyFeatures.classList.add("animate__headShake")
+    eggyHats.classList.add("animate__headShake")
+    eggyEyes.classList.add("animate__headShake")
+
+    setTimeout(function(){
+        eggyFeatures.classList.remove('animate__headShake')
+        eggyHats.classList.remove('animate__headShake')
+        eggyEyes.classList.remove('animate__headShake')
+ 
+     }, 2000)
+}
+
 let popUp = document.getElementById("comprar-popup")
+
 document.getElementById("herramientas-ropa").onclick = function(){
     document.getElementById("herramientas").style.display = "none";
     document.getElementById("inside-ropa").style.display = "flex";
@@ -106,6 +124,7 @@ btn.onclick = function() {
 let menuMonedas = document.getElementById("interior-monedas")
 let btnMonedas = document.getElementById("herramientas-monedas")
 let cerrarMonedas = document.getElementById("cerrar-monedas")
+let notifEl = document.getElementById("money-notif")
 
 btnMonedas.onclick = function() {
     menuMonedas.style.display = "block";
@@ -121,15 +140,32 @@ btnMonedas.onclick = function() {
     }
 }
 
+
+function cuantoGanaste(price) {
+    let cuantasGanasteEl = document.getElementById("cuanto-gano")
+    notifEl.style.display = 'flex'
+
+    moneyActual +=  price
+    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+
+    cuantasGanasteEl.textContent = "¡Ganaste " + price + " monedas!"
+
+    setTimeout(function(){
+        notifEl.classList.add('animate__fadeOut')
+ 
+     }, 4000)
+    
+}
+
+
 //// monedas-email
 document.getElementById("aceptar-email").onclick = function(price){
     menuMonedas.style.display = "none"
     price = 100
-    moneyActual +=  price
-    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+    cuantoGanaste(price)
     document.getElementById("email-card").style.display = "none"
-
 }
+
 
 document.getElementById("ignorar-email").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
@@ -138,13 +174,14 @@ document.getElementById("ignorar-email").onclick = function(feliciPrice){
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     document.getElementById("email-card").style.display = "none"
+    reduceFelicidad()
+ 
 }
 //// monedas-twitter
 document.getElementById("aceptar-twitter").onclick = function(price){
     menuMonedas.style.display = "none"
     price = 50
-    moneyActual +=  price
-    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+    cuantoGanaste(price)
     document.getElementById("twitter-card").style.display = "none"
 
 }
@@ -156,6 +193,7 @@ document.getElementById("ignorar-twitter").onclick = function(feliciPrice){
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     document.getElementById("twitter-card").style.display = "none"
+    reduceFelicidad()
 
 }
 //// monedas-credit
@@ -171,6 +209,7 @@ document.getElementById("ignorar-credit").onclick = function(feliciPrice){
     felicidad -= feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
+    reduceFelicidad()
     //document.getElementById("credit-card").style.display = "none"
 
 }
@@ -207,8 +246,7 @@ inputCodigo.addEventListener('input', function() {
 btnAceptarPay.addEventListener('click', function(price, feliciPrice){    
     menuMonedas.style.display = "none"
     price = 1000
-    moneyActual +=  price
-    moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
+    cuantoGanaste(price)
 
     feliciPrice = 200
     felicidad += feliciPrice
@@ -226,11 +264,13 @@ document.getElementById("ignorar-pay").onclick = function(feliciPrice){
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     document.getElementById("credit-pay").style.display = "none"
+    reduceFelicidad()
 }
 
 cerrarCredit.onclick = function() {
     menuMonedas.style.display = "flex"
     document.getElementById("credit-pay").style.display = "none"
+    reduceFelicidad() ///NO ESTOY SEGURO SI ESTE DEBERIA IR ACA PERO YA FUE
   }
 
 //// monedas-mic
@@ -242,21 +282,26 @@ document.getElementById("aceptar-mic").onclick = function(price){
 
 document.getElementById("ignorar-mic").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
+    feliciPrice = 100
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    reduceFelicidad()
 }
 
 document.getElementById("btn-si-mic").onclick = function(price){
     price = 500
-    moneyActual +=  price
-    moneyActualEl.textContent = moneyActual
+    cuantoGanaste(price)
     document.getElementById("mic-popup").style.display = 'none'
 }
 
-document.getElementById("btn-no-mic").onclick = function(price){
+document.getElementById("btn-no-mic").onclick = function(feliciPrice){
     feliciPrice = 100
     felicidad -= feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     document.getElementById("mic-popup").style.display = 'none'
+    reduceFelicidad()
 }
 
 /////
@@ -315,7 +360,7 @@ inputNombre.addEventListener('input', function() {
         document.getElementById('gracias').style.display='none'
         
  
-     }, 4000)
+     }, 9000)
   });
 
 ///// MENU FOTOS
@@ -341,5 +386,16 @@ btnFotos.onclick = function() {
 document.getElementById("perfil-huevo-card").onclick = function(){
     document.getElementById("dni").style.display = "flex"
     document.getElementById('todo').style.display='none'
+}
+
+document.getElementById("back-dni").onclick = function(feliciPrice){
+    document.getElementById("todo").style.display = "flex"
+    document.getElementById('dni').style.display='none'
+    menuFotos.style.display = "none"
+    feliciPrice = 50
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad
+    checkFelicidad()
+    reduceFelicidad()
 }
 

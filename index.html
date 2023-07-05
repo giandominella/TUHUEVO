@@ -6,9 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
         <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/anim.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>TUHUEVO</title>
     </head>
     <body>
@@ -53,8 +55,16 @@
                     <button id="error-budget-btn">Odio a mi mascota</button>
                 </div>
             </div>
+            <div id="money-notif" class="animate__animated animate__fadeInUp">
+                <div id="notif-left">
+                    <img src="./images/coin.png">
+                </div>
+                <div id="notif-right">
+                    <p id="cuanto-gano">¡Ganaste 0 monedas!</p>
+                </div>
+            </div>
             <div id="barra-superior">
-
+                
                 <div id="nombre-superior">
                     <h3>Holitas</h3>
                 </div>
@@ -66,22 +76,31 @@
                 </div>
 
             </div>
-            <div id="eggy">
-                <img src="./images/bigeggy1.png">
-                <img src="./images/face.png" id="cara-feliz">
-                <img src="./images/face_sad.png" id="cara-triste">
-                <img src="./images/eggyribbon1.png" class="sinUsar-ribbon" id="sinUsar-ribbon-rojo">
-                <img src="./images/eggyribbon_aqua.png" class="sinUsar-ribbon" id="sinUsar-ribbon-aqua">
-                <img src="./images/eggyribbon_azul.png" class="sinUsar-ribbon" id="sinUsar-ribbon-azul">
-                <img src="./images/eggyribbon_gold.png" class="sinUsar-ribbon" id="sinUsar-ribbon-gold">
-                <img src="./images/eggyribbon_naranja.png" class="sinUsar-ribbon" id="sinUsar-ribbon-naranja">
-                <img src="./images/eggyribbon_violeta.png" class="sinUsar-ribbon" id="sinUsar-ribbon-violeta">
 
-                <img src="./images/eggy-sunglasses.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-black">
-                <img src="./images/eggysunglasses_aqua.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-aqua">
-                <img src="./images/eggysunglasses_gold.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-gold">
-                <img src="./images/eggysunglasses_red.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-red">
+            <div id="eggy">
+                <div id="eggy-features" class="animate__animated">
+                    <img src="./images/bigeggy1.png" >
+                    <img src="./images/face.png" id="cara-feliz">
+                    <img src="./images/face_sad.png" id="cara-triste">
+                </div>
+
+                <div id="eggy-hats" class="animate__animated">
+                    <img src="./images/eggyribbon1.png" class="sinUsar-ribbon" id="sinUsar-ribbon-rojo">
+                    <img src="./images/eggyribbon_aqua.png" class="sinUsar-ribbon" id="sinUsar-ribbon-aqua">
+                    <img src="./images/eggyribbon_azul.png" class="sinUsar-ribbon" id="sinUsar-ribbon-azul">
+                    <img src="./images/eggyribbon_gold.png" class="sinUsar-ribbon" id="sinUsar-ribbon-gold">
+                    <img src="./images/eggyribbon_naranja.png" class="sinUsar-ribbon" id="sinUsar-ribbon-naranja">
+                    <img src="./images/eggyribbon_violeta.png" class="sinUsar-ribbon" id="sinUsar-ribbon-violeta">
+                </div>
+
+                <div id="eggy-eyes" class="animate__animated">
+                    <img src="./images/eggy-sunglasses.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-black">
+                    <img src="./images/eggysunglasses_aqua.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-aqua">
+                    <img src="./images/eggysunglasses_gold.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-gold">
+                    <img src="./images/eggysunglasses_red.png" class="sinUsar-ribbon" id="sinUsar-sunglasses-red">
+                </div>
             </div>
+
             <div id="herramientas">
                 <div id="herramientas-ropa">
                     <img src="./images/palette.png">
@@ -92,10 +111,9 @@
                 <div id="herramientas-fotos">
                     <img src="./images/cam2.png">
                 </div>
-                
             </div>
 
-           <div id="inside-ropa" class="menu">
+           <div id="inside-ropa" class="menu" >
                     <img src="./images/back.png" id="back-ropa" class="back-key">
                     <img src="./images/ribbon.png" id="ribbon-button">
                     <img src="./images/sunglasses.png" id="sunglasses-button">
@@ -112,10 +130,6 @@
                 <img src="./images/ribbon_azul.png" id="ribbon-azul">
                 <img src="./images/ribbon_violeta.png" id="ribbon-violeta">
                 <img src="./images/ribbon_naranja.png" id="ribbon-naranja">
-                <img src="./images/ribbon_gold.png" id="ribbon-gold">
-                <img src="./images/ribbon_gold.png" id="ribbon-gold">
-                <img src="./images/ribbon_gold.png" id="ribbon-gold">
-                <img src="./images/ribbon_gold.png" id="ribbon-gold">
                 <img src="./images/ribbon_gold.png" id="ribbon-gold">
             </div>
             
@@ -232,7 +246,7 @@
                 </div>
             </div>
 
-            <div id="interior-monedas" class="modal">
+            <div id="interior-monedas" class="modal fade-in">
                 <div class="modal-content">
                     <div class="modal-header">
                     <p>TIENDA DE MONEDAS</p>
@@ -321,7 +335,7 @@
                 </div>
             </div>
 
-            <div id="interior-fotos" class="modal">
+            <div id="interior-fotos" class="modal fade-in">
                 <div class="modal-content" >
                     <div class="modal-header">
                     <p>Perfil personal</p>
@@ -329,27 +343,51 @@
                     </div>
                     <div class="modal-allcards box-content">
 
-                        <div class="modal-card card-box" id="perfil-huevo-card">
-                            <div class="modal-card-content">
+                        <div class="carta" id="perfil-huevo-card">
+                            <div class="carta-cont">
                                 <img src="./images/id.png">
                             </div>
-                            <div class="modal-card-box-button">
-                                <button id="aceptar-dni" class="button-blue">DNI de TUHUEVO</button>
+                            <div class="carta-btn">
+                                <button id="aceptar-dni" class="button-blue">DNI de tu Huevo</button>
                             </div>
                         </div>
 
-                        <div class="modal-card card-box" id="perfil-huevo-card2">
-                            <div class="modal-card-content">
-                                <p><b>¡SUSCRÍBETE A NUESTRO NEWSLETTER!</b></p><br>
-                                
-                                <p>Comparte con nosotros tu <b>correo electrónico</b> a cambio de <b>100 monedas</b></p>
-                                <input type="email" id="email2" required>
+                        <div class="carta not-available">
+                            <div class="carta-cont">
+                                <img src="./images/cam.png">
                             </div>
-                            <div class="modal-card-button">
-                                <button id="aceptar-email2" class="button-blue">Suscribite</button>
-                                <button id="ignorar-email2">Ignorar</button>
+                            <div class="carta-btn">
+                                <button class="button-blue">¡Tomar una foto!</button>
                             </div>
                         </div>
+
+                        <div class="carta not-available">
+                            <div class="carta-cont">
+                                <img src="./images/download.webp">
+                            </div>
+                            <div class="carta-btn">
+                                <button class="button-blue">Descargar imagen</button>
+                            </div>
+                        </div>
+
+                        <div class="carta not-available">
+                            <div class="carta-cont">
+                                <img src="./images/bigeggy.png">
+                            </div>
+                            <div class="carta-btn">
+                                <button class="button-blue">Refrescar imagen</button>
+                            </div>
+                        </div>
+
+                        <div class="carta not-available">
+                            <div class="carta-cont">
+                                <img src="./images/bigeggy.png">
+                            </div>
+                            <div class="carta-btn">
+                                <button class="button-blue">Refrescar imagen</button>
+                            </div>
+                        </div>
+
 
                     </div>  
                 </div>
@@ -361,19 +399,12 @@
                 <img src="./images/DNI.png" id="img-dni">
             </div>
             <div id="dni-btn">
+                <button id="back-dni" ><img src="./images/back.png"></button>
                 <button id="shareDNI" class="button-blue">Compartir</button>
             </div>
         </div>
 
-        
-        <!-- <div id="money-notif">
-            <div>
-                <img src="./images/coin.png">
-            </div>
-            <div>
-                <p>¡Ganaste <span></span>monedas!</p>
-            </div>
-        </div> -->
+    
 
 
         <script src="js/test.js"></script>

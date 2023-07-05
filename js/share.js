@@ -2,8 +2,9 @@
 
 let shareButton = document.getElementById('shareDNI');
 
-shareButton.addEventListener('click', function() {
-
+shareButton.addEventListener('click', function(price) {
+  price = 200
+  cuantoGanaste(price)
   let imageElement = document.getElementById('img-dni');
   document.getElementById("dni").style.display = "none"
   document.getElementById('todo').style.display='flex'
