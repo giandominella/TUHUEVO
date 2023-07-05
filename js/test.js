@@ -26,14 +26,14 @@ function reduceFelicidad(){
     let eggyHats = document.getElementById("eggy-hats")
     let eggyEyes =  document.getElementById("eggy-eyes")
 
-    eggyFeatures.classList.add("animate__headShake")
-    eggyHats.classList.add("animate__headShake")
-    eggyEyes.classList.add("animate__headShake")
+    eggyFeatures.classList.add("wobble-hor-bottom")
+    eggyHats.classList.add("wobble-hor-bottom")
+    eggyEyes.classList.add("wobble-hor-bottom")
 
     setTimeout(function(){
-        eggyFeatures.classList.remove('animate__headShake')
-        eggyHats.classList.remove('animate__headShake')
-        eggyEyes.classList.remove('animate__headShake')
+        eggyFeatures.classList.remove('wobble-hor-bottom')
+        eggyHats.classList.remove('wobble-hor-bottom')
+        eggyEyes.classList.remove('wobble-hor-bottom')
  
      }, 2000)
 }
