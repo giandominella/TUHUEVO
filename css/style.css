@@ -374,9 +374,9 @@ body{
     width: auto !important;
     height: 7% !important;
     position: absolute;
-    z-index: 1000;
+    z-index: 100000;
     filter: opacity(100%) !important;
-    top:71%; left: 0%;
+    top: 50%; left: 0%;
 
 }
 
