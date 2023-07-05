@@ -107,7 +107,8 @@ var btn = document.getElementById("herramientas-happiness");
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
-    modal.style.display = "block";
+    //modal.style.display = "block";
+    reduceFelicidad()
   }
 
   span.onclick = function() {
