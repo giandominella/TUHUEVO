@@ -178,6 +178,8 @@ body{
     
 }
 
+
+
 #barra-superior{
     align-items: center;
     display: flex;
@@ -289,7 +291,6 @@ body{
 }
 
 #eggy-features{
-    z-index: 1;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
@@ -299,7 +300,6 @@ body{
 }
 
 #eggy-hats{
-    z-index: 10;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
@@ -309,7 +309,6 @@ body{
 }
 
 #eggy-eyes{
-    z-index: 10;
     position: absolute;
     width: 100% !important;
     height: 64% !important;
@@ -348,7 +347,6 @@ body{
 }
 
 .menu{
-    z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #D1D1D6;
     border-radius: 2vh 2vh 0vh 0vh;
@@ -375,9 +373,9 @@ body{
     width: auto !important;
     height: 7% !important;
     position: absolute;
-    z-index: 100000;
+    z-index: 1000;
     filter: opacity(100%) !important;
-    top: 50%; left: 0%;
+    top:71%; left: 0%;
 
 }
 
