@@ -96,7 +96,7 @@ a{
 }
 .comprado{
     filter: opacity(100%) !important;
-    border: 2px solid #007AFF !important;
+    border: 1px solid #007AFF !important;
 }
 
 
@@ -187,7 +187,7 @@ body{
     justify-content: center;
     color: white;
     width: 100%;
-    height: 14%;
+    height: 16%;
     padding-top: 2vh;
     font-weight: bolder;
     text-shadow: 1px 1px 2px black;
@@ -389,9 +389,11 @@ body{
 
 }
 
-
-
 #inside-ribbon img{
+    filter: opacity(55%);
+}
+
+#inside-sunglasses img{
     filter: opacity(55%);
 }
 
@@ -492,6 +494,9 @@ body{
 }
 
 .carta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 47%;
     height: fit-content;
     font-weight: 400;
@@ -503,9 +508,6 @@ body{
 .carta-cont{
     padding: 3vw;
     height: 16vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .carta-cont img{

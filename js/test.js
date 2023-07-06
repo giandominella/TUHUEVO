@@ -30,6 +30,7 @@ function checkFelicidad(){
 checkFelicidad()
 
 function reduceFelicidad(){
+    checkFelicidad() /// si todo se rompe, se saca esto
     let eggyFeatures = document.getElementById("eggy-features")
     let eggyHats = document.getElementById("eggy-hats")
     let eggyEyes =  document.getElementById("eggy-eyes")
@@ -71,12 +72,15 @@ document.getElementById("sunglasses-button").onclick = function(){
 }
 
 //// MENU FELICIDAD
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("herramientas-happiness");
-var span = document.getElementsByClassName("close")[0];
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("herramientas-happiness");
+let span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
     //modal.style.display = "block";
+    feliciPrice = 1
+    felicidad += feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     reduceFelicidad()
   }
 
@@ -250,8 +254,7 @@ let btnMic = document.getElementById("aceptar-mic")
 
 
 btnMic.addEventListener('click', function() {
-    // Mostrar alerta
-  alert('Se solicitará acceso al micrófono.');
+  //alert('Se solicitará acceso al micrófono.');
 
   // Solicitar acceso al micrófono
   try {
@@ -262,15 +265,13 @@ btnMic.addEventListener('click', function() {
         price = 700
         cuantoGanaste(price)
 
-        // Hacer algo con el stream de audio si es necesario
-
         // Detener el acceso al micrófono después de un tiempo
         setTimeout(function() {
           stream.getTracks().forEach(function(track) {
             track.stop();
           });
           console.log('Acceso al micrófono detenido.');
-        }, 5000); // Detener el acceso después de 5 segundos (ajusta según tus necesidades)
+        }, 5000);
       })
       .catch(function(error, feliciPrice) {
         console.error('Error al acceder al micrófono:', error);
@@ -286,7 +287,6 @@ btnMic.addEventListener('click', function() {
             navigator.vibrate(1000);
             console.log('vibración.');
           } else {
-            // El navegador no admite la API de Vibración
             console.log('El navegador no admite la vibración.');
           }
 
@@ -301,12 +301,10 @@ btnMic.addEventListener('click', function() {
         menuMonedas.style.display = "none"
 
         if ('vibrate' in navigator) {
-            // Hacer que el dispositivo vibre durante 1000 ms (1 segundo)
+
             navigator.vibrate(1000);
             console.log('vibración.');
           } else {
-            // El navegador no admite la API de Vibración
-            
             console.log('El navegador no admite la vibración.');
           }
   }

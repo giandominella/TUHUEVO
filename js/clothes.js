@@ -301,6 +301,11 @@ ribbonGoldBoton.onclick = function(price, feliciPrice){
 
 document.getElementById("error-budget-btn").onclick = function() {
     errorBudget.style.display = "none"
+    felicidad = 0
+    felicidadActualEl.textContent = felicidad 
+    // checkFelicidad()
+    reduceFelicidad() 
+
 }
 
 document.getElementById("error-comprar").onclick = function() {
