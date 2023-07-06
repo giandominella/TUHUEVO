@@ -19,7 +19,7 @@ let priceText = document.getElementById("valor-ribbon")
 
 // INTENTO DE ARRAY let ribbonHead = [ribbonRojoHead, ribbonAquaHead, ribbonAzulHead, ribbonVioletaHead, ribbonNaranjaHead, ribbonGoldHead]
 
-let compradoR1, compradoR2, compradoR3, compradoR4, compradoR5, compradoR6= false
+let compradoR1, compradoR2, compradoR3, compradoR4, compradoR5, compradoR6 = false
 
 ////////////////////////////
 
@@ -28,15 +28,16 @@ let compradoR1, compradoR2, compradoR3, compradoR4, compradoR5, compradoR6= fals
 document.getElementById("back-ribbon").onclick = function(){
     document.getElementById("inside-ropa").style.display = "flex";
     document.getElementById("inside-ribbon").style.display = "none";
+    document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
 }
 //NONE
 document.getElementById("none-ribbon").onclick = function(){
-    document.getElementById("sinUsar-ribbon-rojo").style.display = "none";
-    document.getElementById("sinUsar-ribbon-aqua").style.display = "none";
-    document.getElementById("sinUsar-ribbon-azul").style.display = "none";
-    document.getElementById("sinUsar-ribbon-gold").style.display = "none";
-    document.getElementById("sinUsar-ribbon-naranja").style.display = "none";
-    document.getElementById("sinUsar-ribbon-violeta").style.display = "none";
+    ribbonRojoHead.style.display = "none";
+    ribbonAquaHead.style.display = "none";
+    ribbonAzulHead.style.display = "none";
+    ribbonVioletaHead.style.display = "none";
+    ribbonNaranjaHead.style.display = "none";
+    ribbonGoldHead.style.display = "none";
 }
 //RIBBON ROJO
 ribbonRojoBoton.onclick = function(price){
@@ -305,4 +306,203 @@ document.getElementById("error-budget-btn").onclick = function() {
 document.getElementById("error-comprar").onclick = function() {
     menuMonedas.style.display = "block"
     errorBudget.style.display = "none"
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+////lentes cabeza
+let sunBlackHead = document.getElementById("sinUsar-sunglasses-black")
+let sunAquaHead = document.getElementById("sinUsar-sunglasses-aqua")
+let sunRedHead = document.getElementById("sinUsar-sunglasses-red")
+let sunGoldHead = document.getElementById("sinUsar-sunglasses-gold")
+
+////lentes botones
+let sunBlackBtn = document.getElementById("sunglasses-black")
+let sunAquaBtn = document.getElementById("sunglasses-aqua")
+let sunRedBtn = document.getElementById("sunglasses-red")
+let sunGoldBtn = document.getElementById("sunglasses-gold")
+
+
+///boolean comprados
+
+let compradoSBlack, compradoSAqua, compradoSRed, compradoSGold = false
+
+////////////////////////////
+///back key
+document.getElementById("back-sun").onclick = function(){
+    document.getElementById("inside-ropa").style.display = "flex";
+    document.getElementById("inside-sunglasses").style.display = "none";
+    document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
+}
+
+///none
+document.getElementById("none-sun").onclick = function(){
+    sunBlackHead.style.display = "none";
+    sunAquaHead.style.display = "none";
+    sunRedHead.style.display = "none";
+    sunGoldHead.style.display = "none";
+}
+
+///lentes black
+sunBlackBtn.onclick = function(price){
+    errorBudget.style.display = "none"
+    popUp.style.display = 'none'
+    price = 10
+    priceText.textContent = price
+
+    if(compradoSBlack === true){
+        sunBlackHead .style.display = "flex";
+        sunAquaHead.style.display = "none";
+        sunRedHead.style.display = "none";
+        sunGoldHead.style.display = "none";
+
+    } else {
+        popUp.style.display = 'flex'
+    }
+
+    document.getElementById("btn-si").onclick = function(){
+        if(price <= moneyActual){
+            compradoSBlack = true
+
+            sunBlackHead .style.display = "flex";
+            sunAquaHead.style.display = "none";
+            sunRedHead.style.display = "none";
+            sunGoldHead.style.display = "none";
+            
+            moneyActual -=  price
+            moneyActualEl.textContent = moneyActual
+            popUp.style.display = "none";
+           
+            sunBlackBtn.className = "comprado"
+        } else {
+            errorBudget.style.display = "flex"
+            popUp.style.display = 'none'
+        }
+    }
+    document.getElementById("btn-no").onclick = function(){
+        popUp.style.display = 'none'
+    }
+}
+
+///lentes aqua
+sunAquaBtn.onclick = function(price){
+    errorBudget.style.display = "none"
+    popUp.style.display = 'none'
+    price = 20
+    priceText.textContent = price
+
+    if(compradoSBlack === true){
+        sunBlackHead .style.display = "none";
+        sunAquaHead.style.display = "flex";
+        sunRedHead.style.display = "none";
+        sunGoldHead.style.display = "none";
+
+    } else {
+        popUp.style.display = 'flex'
+    }
+
+    document.getElementById("btn-si").onclick = function(){
+        if(price <= moneyActual){
+            compradoSAqua = true
+
+            sunBlackHead .style.display = "none";
+            sunAquaHead.style.display = "flex";
+            sunRedHead.style.display = "none";
+            sunGoldHead.style.display = "none";
+            
+            moneyActual -=  price
+            moneyActualEl.textContent = moneyActual
+            popUp.style.display = "none";
+           
+            sunAquaBtn.className = "comprado"
+        } else {
+            errorBudget.style.display = "flex"
+            popUp.style.display = 'none'
+        }
+    }
+    document.getElementById("btn-no").onclick = function(){
+        popUp.style.display = 'none'
+    }
+}
+
+///lentes red
+sunRedBtn.onclick = function(price){
+    errorBudget.style.display = "none"
+    popUp.style.display = 'none'
+    price = 25
+    priceText.textContent = price
+
+    if(compradoSRed === true){
+        sunBlackHead .style.display = "none";
+        sunAquaHead.style.display = "none";
+        sunRedHead.style.display = "flex";
+        sunGoldHead.style.display = "none";
+
+    } else {
+        popUp.style.display = 'flex'
+    }
+
+    document.getElementById("btn-si").onclick = function(){
+        if(price <= moneyActual){
+            compradoSRed = true
+
+            sunBlackHead .style.display = "none";
+            sunAquaHead.style.display = "none";
+            sunRedHead.style.display = "flex";
+            sunGoldHead.style.display = "none";
+            
+            moneyActual -=  price
+            moneyActualEl.textContent = moneyActual
+            popUp.style.display = "none";
+           
+            sunRedBtn.className = "comprado"
+        } else {
+            errorBudget.style.display = "flex"
+            popUp.style.display = 'none'
+        }
+    }
+    document.getElementById("btn-no").onclick = function(){
+        popUp.style.display = 'none'
+    }
+}
+
+/// lentes gold
+sunGoldBtn.onclick = function(price){
+    errorBudget.style.display = "none"
+    popUp.style.display = 'none'
+    price = 100
+    priceText.textContent = price
+
+    if(compradoSRed === true){
+        sunBlackHead .style.display = "none";
+        sunAquaHead.style.display = "none";
+        sunRedHead.style.display = "none";
+        sunGoldHead.style.display = "flex";
+
+    } else {
+        popUp.style.display = 'flex'
+    }
+
+    document.getElementById("btn-si").onclick = function(){
+        if(price <= moneyActual){
+            compradoSGold = true
+
+            sunBlackHead .style.display = "none";
+            sunAquaHead.style.display = "none";
+            sunRedHead.style.display = "none";
+            sunGoldHead.style.display = "flex";
+            
+            moneyActual -=  price
+            moneyActualEl.textContent = moneyActual
+            popUp.style.display = "none";
+           
+            sunGoldBtn.className = "comprado"
+        } else {
+            errorBudget.style.display = "flex"
+            popUp.style.display = 'none'
+        }
+    }
+    document.getElementById("btn-no").onclick = function(){
+        popUp.style.display = 'none'
+    }
 }

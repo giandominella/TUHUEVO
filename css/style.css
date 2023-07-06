@@ -187,7 +187,7 @@ body{
     justify-content: center;
     color: white;
     width: 100%;
-    height: 16%;
+    height: 14%;
     padding-top: 2vh;
     font-weight: bolder;
     text-shadow: 1px 1px 2px black;
@@ -356,7 +356,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
+    overflow: visible;
+    backdrop-filter: blur(0px);
 }
 
 .menu img{
@@ -369,15 +370,26 @@ body{
     border: 1px solid #D1D1D6;
 }
 
+.menu-elementos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    backdrop-filter: blur(0px);
+}
+
 .back-key{
     width: auto !important;
-    height: 7% !important;
+    height: 30% !important;
     position: absolute;
-    z-index: 1000;
+    z-index: 1000 !important;
     filter: opacity(100%) !important;
-    top:71%; left: 0%;
+    bottom: 100%; left: 0%;
 
 }
+
+
 
 #inside-ribbon img{
     filter: opacity(55%);

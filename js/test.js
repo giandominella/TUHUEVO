@@ -7,15 +7,23 @@ let felicidadActualEl = document.getElementById('felicidadActual')
 let felicidad = 200
 felicidadActualEl.textContent += felicidad
 let caraFeliz = document.getElementById('cara-feliz')
+let caraMeh = document.getElementById('cara-meh')
 let caraTriste = document.getElementById('cara-triste')
-
+console.log(felicidad)
 function checkFelicidad(){
     if( felicidad >= 200){
         caraFeliz.style.display = "flex"
         caraTriste.style.display = "none"
+        caraMeh.style.display = "none"
     } 
     if (felicidad < 200) {
         caraFeliz.style.display = "none"
+        caraMeh.style.display = "flex"
+        caraTriste.style.display = "none"
+    }
+    if(felicidad < 150) {
+        caraFeliz.style.display = "none"
+        caraMeh.style.display = "none"
         caraTriste.style.display = "flex"
     }
 }
@@ -35,7 +43,7 @@ function reduceFelicidad(){
         eggyHats.classList.remove('wobble-hor-bottom')
         eggyEyes.classList.remove('wobble-hor-bottom')
  
-     }, 2000)
+     }, 1000)
 }
 
 let popUp = document.getElementById("comprar-popup")
@@ -43,11 +51,13 @@ let popUp = document.getElementById("comprar-popup")
 document.getElementById("herramientas-ropa").onclick = function(){
     document.getElementById("herramientas").style.display = "none";
     document.getElementById("inside-ropa").style.display = "flex";
+    document.getElementById("inside-ropa").classList.add("slide-in-bottom")
 }
 
 document.getElementById("back-ropa").onclick = function(){
     document.getElementById("herramientas").style.display = "flex";
     document.getElementById("inside-ropa").style.display = "none";
+
 }
 
 document.getElementById("ribbon-button").onclick = function(){
@@ -58,47 +68,6 @@ document.getElementById("ribbon-button").onclick = function(){
 document.getElementById("sunglasses-button").onclick = function(){
     document.getElementById("inside-ropa").style.display = "none";
     document.getElementById("inside-sunglasses").style.display = "flex";
-}
-
-
-document.getElementById("back-sun").onclick = function(){
-    document.getElementById("inside-ropa").style.display = "flex";
-    document.getElementById("inside-sunglasses").style.display = "none";
-}
-
-document.getElementById("none-sun").onclick = function(){
-    document.getElementById("sinUsar-sunglasses-black").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-aqua").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-gold").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-red").style.display = "none";
-}
-
-document.getElementById("sunglasses-black").onclick = function(){
-    document.getElementById("sinUsar-sunglasses-black").style.display = "flex";
-    document.getElementById("sinUsar-sunglasses-aqua").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-gold").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-red").style.display = "none";
-}
-
-document.getElementById("sunglasses-aqua").onclick = function(){
-    document.getElementById("sinUsar-sunglasses-black").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-aqua").style.display = "flex";
-    document.getElementById("sinUsar-sunglasses-gold").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-red").style.display = "none";
-}
-
-document.getElementById("sunglasses-gold").onclick = function(){
-    document.getElementById("sinUsar-sunglasses-black").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-aqua").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-gold").style.display = "flex";
-    document.getElementById("sinUsar-sunglasses-red").style.display = "none";
-}
-
-document.getElementById("sunglasses-red").onclick = function(){
-    document.getElementById("sinUsar-sunglasses-black").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-aqua").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-gold").style.display = "none";
-    document.getElementById("sinUsar-sunglasses-red").style.display = "flex";
 }
 
 //// MENU FELICIDAD
@@ -275,6 +244,83 @@ cerrarCredit.onclick = function() {
   }
 
 //// monedas-mic
+
+let btnMic = document.getElementById("aceptar-mic")
+
+
+
+btnMic.addEventListener('click', function() {
+    // Mostrar alerta
+  alert('Se solicitará acceso al micrófono.');
+
+  // Solicitar acceso al micrófono
+  try {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(function(stream, price) {
+        // Acceso al micrófono otorgado
+        console.log('Acceso al micrófono otorgado.');
+        price = 700
+        cuantoGanaste(price)
+
+        // Hacer algo con el stream de audio si es necesario
+
+        // Detener el acceso al micrófono después de un tiempo
+        setTimeout(function() {
+          stream.getTracks().forEach(function(track) {
+            track.stop();
+          });
+          console.log('Acceso al micrófono detenido.');
+        }, 5000); // Detener el acceso después de 5 segundos (ajusta según tus necesidades)
+      })
+      .catch(function(error, feliciPrice) {
+        console.error('Error al acceder al micrófono:', error);
+        feliciPrice = 150
+        felicidad -= feliciPrice
+        felicidadActualEl.textContent = felicidad
+        checkFelicidad()
+        reduceFelicidad()
+        menuMonedas.style.display = "none"
+
+        if ('vibrate' in navigator) {
+            // Hacer que el dispositivo vibre durante 1000 ms (1 segundo)
+            navigator.vibrate(1000);
+            console.log('vibración.');
+          } else {
+            // El navegador no admite la API de Vibración
+            console.log('El navegador no admite la vibración.');
+          }
+
+
+      });
+  } catch (error) {
+        feliciPrice = 150
+        felicidad -= feliciPrice
+        felicidadActualEl.textContent = felicidad
+        checkFelicidad()
+        reduceFelicidad()
+        menuMonedas.style.display = "none"
+
+        if ('vibrate' in navigator) {
+            // Hacer que el dispositivo vibre durante 1000 ms (1 segundo)
+            navigator.vibrate(1000);
+            console.log('vibración.');
+          } else {
+            // El navegador no admite la API de Vibración
+            
+            console.log('El navegador no admite la vibración.');
+          }
+  }
+});
+
+document.getElementById("ignorar-mic").onclick = function(feliciPrice){
+    menuMonedas.style.display = "none"
+    feliciPrice = 100
+    felicidad -= feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
+    reduceFelicidad()
+}
+/*
 document.getElementById("aceptar-mic").onclick = function(price){
     menuMonedas.style.display = "none"
     document.getElementById("mic-card").style.display = "none"
@@ -303,7 +349,7 @@ document.getElementById("btn-no-mic").onclick = function(feliciPrice){
     checkFelicidad()
     document.getElementById("mic-popup").style.display = 'none'
     reduceFelicidad()
-}
+}*/
 
 /////
 let nombreSuperior = document.getElementById("nombre-superior")
