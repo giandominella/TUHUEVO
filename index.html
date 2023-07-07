@@ -40,6 +40,40 @@
         </div>
 
         <div id="todo">
+
+            <div id="gift">
+                <div id="gift-x">
+                    <span class="close">&times;</span>
+                </div>
+                <div id="gift-img">
+                    <img src="./images/gift.png">
+                </div>
+            </div>
+
+            <div id="gift-card" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>¡Gracias por jugar con TUHUEVO!</h2>
+                        <p>Te ganaste un regalito que será enviado <b>directo a tu puerta</b></p>
+                    </div>
+
+                    <div id="input-img">
+                        <img src="./images/ribbon.png">
+                    </div>
+
+                    <div class="inputs">
+                        <label for="text" id="direc-label">Ingresa tu dirección</label><br>
+                        <input type="text" id="direc" placeholder="Calle 12 727 entre 45 y 46">
+                    </div>
+                    
+                    <div class="modal-card-button">
+                        <button id="gift-enviar" class="button-blue" disabled>Enviar</button>
+                        <button id="gift-cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            
             
             <div id="comprar-popup" class="popup">
                 <h2>¿Deseas comprar el siguiente objeto?</h2><br><h3>Valor: <span id="valor-ribbon"></span> monedas</h3>
@@ -147,7 +181,7 @@
             </div>
             
             <div id="inside-sunglasses" class="menu">
-                <img src="./images/back.png" id="back-sun" class="back-key" >
+                <img src="./images/back.png" id="back-sun" class="back-key">
 
                 <div class="menu-elementos">
                     <img src="./images/none.png" id="none-sun">

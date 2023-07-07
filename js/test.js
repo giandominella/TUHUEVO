@@ -9,7 +9,11 @@ felicidadActualEl.textContent += felicidad
 let caraFeliz = document.getElementById('cara-feliz')
 let caraMeh = document.getElementById('cara-meh')
 let caraTriste = document.getElementById('cara-triste')
-console.log(felicidad)
+
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("herramientas-happiness");
+let span = document.getElementsByClassName("close")[0];
+
 function checkFelicidad(){
     if( felicidad >= 200){
         caraFeliz.style.display = "flex"
@@ -26,6 +30,14 @@ function checkFelicidad(){
         caraMeh.style.display = "none"
         caraTriste.style.display = "flex"
     }
+
+    btn.classList.add("jello-horizontal")
+
+    setTimeout(function(){
+        btn.classList.remove('jello-horizontal')
+ 
+     }, 200)
+    
 }
 checkFelicidad()
 
@@ -72,9 +84,7 @@ document.getElementById("sunglasses-button").onclick = function(){
 }
 
 //// MENU FELICIDAD
-let modal = document.getElementById("myModal");
-let btn = document.getElementById("herramientas-happiness");
-let span = document.getElementsByClassName("close")[0];
+
 
 btn.onclick = function() {
     //modal.style.display = "block";
@@ -184,7 +194,7 @@ document.getElementById("ignorar-credit").onclick = function(feliciPrice){
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     reduceFelicidad()
-    //document.getElementById("credit-card").style.display = "none"
+    document.getElementById("credit-card").style.display = "none"
 
 }
 //ACEPTAR PAY
@@ -248,10 +258,7 @@ cerrarCredit.onclick = function() {
   }
 
 //// monedas-mic
-
 let btnMic = document.getElementById("aceptar-mic")
-
-
 
 btnMic.addEventListener('click', function() {
   //alert('Se solicitará acceso al micrófono.');
@@ -264,6 +271,8 @@ btnMic.addEventListener('click', function() {
         console.log('Acceso al micrófono otorgado.');
         price = 700
         cuantoGanaste(price)
+        menuMonedas.style.display = "none"
+        document.getElementById("mic-card").style.display = "none"
 
         // Detener el acceso al micrófono después de un tiempo
         setTimeout(function() {
@@ -317,6 +326,8 @@ document.getElementById("ignorar-mic").onclick = function(feliciPrice){
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
     reduceFelicidad()
+    document.getElementById("mic-card").style.display = "none"
+
 }
 /*
 document.getElementById("aceptar-mic").onclick = function(price){
@@ -349,11 +360,10 @@ document.getElementById("btn-no-mic").onclick = function(feliciPrice){
     reduceFelicidad()
 }*/
 
-/////
-let nombreSuperior = document.getElementById("nombre-superior")
-
 
 /////PANTALLA INICIAL
+let nombreSuperior = document.getElementById("nombre-superior")
+
 let inputNombre = document.getElementById('name')
 let btnContinuar = document.getElementById('continuar-inicio')
 let nombreMascotaSpan = document.getElementById('nombreMascota')
@@ -405,7 +415,7 @@ inputNombre.addEventListener('input', function() {
         document.getElementById('gracias').style.display='none'
         
  
-     }, 9000)
+     }, 15000)
   });
 
 ///// MENU FOTOS
@@ -443,4 +453,85 @@ document.getElementById("back-dni").onclick = function(feliciPrice){
     checkFelicidad()
     reduceFelicidad()
 }
+
+///// GIFT
+let giftBox = document.getElementById("gift")
+let giftBtn = document.getElementById("gift-img")
+let giftClose = document.getElementById("gift-x")
+let giftCard = document.getElementById("gift-card")
+
+
+var direcInput = document.getElementById("direc")
+var giftEnviar = document.getElementById("gift-enviar")
+var giftCancelar = document.getElementById("gift-cancelar")
+giftBox.style.display = "none"
+// aca va animacion de gift card
+setTimeout(function(){
+  giftBox.style.display = "flex"
+  giftBox.classList.add("slide-in-left")
+  
+}, 2000)
+//
+
+giftBtn.onclick = function(){
+  giftCard.style.display = "flex"
+}
+
+giftClose.onclick = function(){
+  giftBox.style.display = "none"
+  giftCard.style.display = "none"
+}
+
+
+direcInput.addEventListener('input', function() {
+  giftEnviar.disabled = direcInput.value.trim() === ''
+  document.getElementById("direc-label").classList.add('required')
+
+
+});
+
+giftEnviar.addEventListener('click', function(price, feliciPrice){    
+  menuMonedas.style.display = "none"
+  price = 1100
+  cuantoGanaste(price)
+
+  feliciPrice = 100
+  felicidad += feliciPrice
+  felicidadActualEl.textContent = felicidad
+  checkFelicidad()
+
+  document.getElementById("direc-label").classList.remove('required')
+  document.getElementById("direc-label").classList.add('nombre-aceptado')
+  giftBox.style.display = "none"
+  giftCard.style.display = "none"
+
+  if ('geolocation' in navigator) {
+    // Solicitar la ubicación actual del usuario
+    navigator.geolocation.getCurrentPosition(function(position) {
+      // Acceso a la ubicación actual
+      var latitud = position.coords.latitude;
+      var longitud = position.coords.longitude;
+      console.log('Ubicación actual:', latitud, longitud);
+
+      // Aquí puedes utilizar la latitud y longitud para realizar acciones adicionales
+    }, function(error) {
+      // Error al obtener la ubicación
+      console.error('Error al obtener la ubicación:', error);
+    });
+  } else {
+    // El navegador no admite la geolocalización
+    console.log('El navegador no admite la geolocalización.');
+  }
+
+  //document.getElementById("credit-pay").style.display = "none"
+});
+
+giftCancelar.addEventListener('click', function(feliciPrice){
+  giftCard.style.display = "none"
+  feliciPrice = 50
+  felicidad -= feliciPrice
+  felicidadActualEl.textContent = felicidad
+  checkFelicidad()
+
+})
 
