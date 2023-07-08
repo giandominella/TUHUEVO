@@ -65,22 +65,29 @@ document.getElementById("herramientas-ropa").onclick = function(){
     document.getElementById("herramientas").style.display = "none";
     document.getElementById("inside-ropa").style.display = "flex";
     document.getElementById("inside-ropa").classList.add("slide-in-bottom")
+    document.getElementById("back-ropa").style.display = "flex";
 }
 
 document.getElementById("back-ropa").onclick = function(){
     document.getElementById("herramientas").style.display = "flex";
     document.getElementById("inside-ropa").style.display = "none";
+    document.getElementById("back-ropa").style.display = "none";
 
 }
 
 document.getElementById("ribbon-button").onclick = function(){
     document.getElementById("inside-ropa").style.display = "none";
+    document.getElementById("back-ropa").style.display = "none";
     document.getElementById("inside-ribbon").style.display = "flex";
+    document.getElementById("back-ribbon").style.display = "flex";
 }
 
 document.getElementById("sunglasses-button").onclick = function(){
     document.getElementById("inside-ropa").style.display = "none";
+    document.getElementById("back-ropa").style.display = "none";
     document.getElementById("inside-sunglasses").style.display = "flex";
+    document.getElementById("back-sun").style.display = "flex";
+
 }
 
 //// MENU FELICIDAD

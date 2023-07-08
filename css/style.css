@@ -22,7 +22,7 @@
     background-color: rgba(227, 227, 227, 0.5);
     width: 27%;
     height: 15%;
-    top: 16%;
+    top: 18%;
     right: 73%;
     position: absolute;
     z-index: 1;
@@ -432,9 +432,52 @@ body{
     position: absolute;
     z-index: 1000 !important;
     filter: opacity(100%) !important;
-    bottom: 100%; left: 0%;
+    bottom: 100%; 
+    left: 0%;
 
+    border-radius: 1vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 20vw;
+    width: 20vw;
+    margin: 1vw;
+    padding: 1vw;
+    border: 1px solid #D1D1D6;
 }
+
+.back-key-try{
+    display: none;
+    width: auto !important;
+    height: 5% !important;
+    position: absolute;
+    z-index: 1000 !important;
+    filter: opacity(100%) !important;
+    bottom: 20%; 
+    left: 0%;
+
+    border-radius: 1vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 20vw;
+    width: 20vw;
+    margin: 1vw;
+    padding: 1vw;
+    border: 1px solid #D1D1D6;
+}
+
+#back-ropa{
+    background-color: red !important;
+}
+
+
+#back-ribbon{
+    background-color: blue !important;
+}
+
+#back-sun{
+    background-color: yellow !important;
+}
+
+
+
 
 #inside-ribbon img{
     filter: opacity(55%);
