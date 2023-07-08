@@ -7,7 +7,7 @@
 }
 
 #todo{
-    display: flex;  
+    display: none;  
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@
 
 
 #pantalla-inicio{
-    display: none; 
+    display: flex; 
 }
 
 #pantalla-inicio h1{
@@ -255,17 +255,38 @@ body{
     flex-direction: row;
     justify-content: center;
     width: 100%;
+    font-size: 25px;
+}
+
+.superior-happ{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding-left: 5vw;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#superior-money{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding-right: 5vw;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
 }
 
 #felicidadActual{
+    padding-left: 2vw;
     display: flex;
     flex-direction: row;
     font-size: 25px;
     align-items: center;
-    margin-right: 30%;
 }
 
 #moneyActual{
+    padding-right: 2vw;
     display: flex;
     flex-direction: row;
     font-size: 25px;
@@ -324,10 +345,10 @@ body{
     height: 5vh;
     margin-bottom: 5vh;
 }
-#herramientas-happiness{
+/* #herramientas-happiness{
     display: flex;
     align-items: center;
-}
+} */
 
 #eggy{
     width: 100% !important;
@@ -426,23 +447,6 @@ body{
     backdrop-filter: blur(0px);
 }
 
-.back-key{
-    width: auto !important;
-    height: 30% !important;
-    position: absolute;
-    z-index: 1000 !important;
-    filter: opacity(100%) !important;
-    bottom: 100%; 
-    left: 0%;
-
-    border-radius: 1vh;
-    background-color: rgba(255, 255, 255, 0.7);
-    height: 20vw;
-    width: 20vw;
-    margin: 1vw;
-    padding: 1vw;
-    border: 1px solid #D1D1D6;
-}
 
 .back-key-try{
     display: none;
@@ -462,20 +466,6 @@ body{
     padding: 1vw;
     border: 1px solid #D1D1D6;
 }
-
-#back-ropa{
-    background-color: red !important;
-}
-
-
-#back-ribbon{
-    background-color: blue !important;
-}
-
-#back-sun{
-    background-color: yellow !important;
-}
-
 
 
 

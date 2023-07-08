@@ -10,6 +10,8 @@ let caraFeliz = document.getElementById('cara-feliz')
 let caraMeh = document.getElementById('cara-meh')
 let caraTriste = document.getElementById('cara-triste')
 
+
+
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("herramientas-happiness");
 let span = document.getElementsByClassName("close")[0];
@@ -19,16 +21,27 @@ function checkFelicidad(){
         caraFeliz.style.display = "flex"
         caraTriste.style.display = "none"
         caraMeh.style.display = "none"
+        document.getElementById("cara-feliz-emoji").style.display ="flex"
+        document.getElementById("cara-meh-emoji").style.display = "none"
+        document.getElementById("cara-triste-emoji").style.display = "none"
+
     } 
     if (felicidad < 200) {
         caraFeliz.style.display = "none"
         caraMeh.style.display = "flex"
         caraTriste.style.display = "none"
+        document.getElementById("cara-feliz-emoji").style.display ="none"
+        document.getElementById("cara-meh-emoji").style.display = "flex"
+        document.getElementById("cara-triste-emoji").style.display = "none"
     }
     if(felicidad < 150) {
         caraFeliz.style.display = "none"
         caraMeh.style.display = "none"
         caraTriste.style.display = "flex"
+
+        document.getElementById("cara-feliz-emoji").style.display ="none"
+        document.getElementById("cara-meh-emoji").style.display = "none"
+        document.getElementById("cara-triste-emoji").style.display = "flex"
     }
 
     btn.classList.add("jello-horizontal")
@@ -131,6 +144,10 @@ btnMonedas.onclick = function() {
     }
 }
 
+document.getElementById("superior-money").onclick = function() {
+  menuMonedas.style.display = "block";
+}
+
 
 function cuantoGanaste(price) {
     let cuantasGanasteEl = document.getElementById("cuanto-gano")
@@ -141,11 +158,21 @@ function cuantoGanaste(price) {
 
     cuantasGanasteEl.textContent = "¡Ganaste " + price + " monedas!"
 
-    setTimeout(function(){
+    /*setTimeout(function(){
         notifEl.classList.add('animate__fadeOut')
+        
  
-     }, 4000)
-    
+     }, 4000)*/
+     setTimeout(function() {
+      notifEl.classList.add('animate__fadeOut');
+  
+      // Esperar 2 segundos y ocultar la notificación
+      setTimeout(function() {
+        notifEl.style.display = 'none';
+        notifEl.classList.remove('animate__fadeOut');
+      }, 2000);
+    }, 4000);
+     
 }
 
 
@@ -444,10 +471,10 @@ btnFotos.onclick = function() {
         menuFotos.style.display = "none";
     }
 }
-
+///dni
 document.getElementById("perfil-huevo-card").onclick = function(){
     document.getElementById("dni").style.display = "flex"
-    document.getElementById('todo').style.display='none'
+    //document.getElementById('todo').style.display='none'
 }
 
 document.getElementById("back-dni").onclick = function(feliciPrice){
@@ -460,6 +487,7 @@ document.getElementById("back-dni").onclick = function(feliciPrice){
     checkFelicidad()
     reduceFelicidad()
 }
+
 
 ///// GIFT
 let giftBox = document.getElementById("gift")
@@ -487,6 +515,13 @@ giftBtn.onclick = function(){
 giftClose.onclick = function(){
   giftBox.style.display = "none"
   giftCard.style.display = "none"
+
+  setTimeout(function() {
+    giftBox.style.display = "flex"
+
+  }, 5000);
+
+
 }
 
 
