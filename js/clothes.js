@@ -28,7 +28,7 @@ let compradoR1, compradoR2, compradoR3, compradoR4, compradoR5, compradoR6 = fal
 document.getElementById("back-ribbon").onclick = function(){
     document.getElementById("inside-ropa").style.display = "flex";
     document.getElementById("inside-ribbon").style.display = "none";
-    document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
+    //document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
 }
 //NONE
 document.getElementById("none-ribbon").onclick = function(){
@@ -337,7 +337,7 @@ let compradoSBlack, compradoSAqua, compradoSRed, compradoSGold = false
 document.getElementById("back-sun").onclick = function(){
     document.getElementById("inside-ropa").style.display = "flex";
     document.getElementById("inside-sunglasses").style.display = "none";
-    document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
+    //document.getElementById("inside-ropa").classList.remove("slide-in-bottom")
 }
 
 ///none
