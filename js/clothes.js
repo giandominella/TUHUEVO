@@ -252,7 +252,7 @@ ribbonNaranjaBoton.onclick = function(price){
 ribbonGoldBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 100
+    price = 1000
     priceText.textContent = price
 
 
@@ -285,7 +285,7 @@ ribbonGoldBoton.onclick = function(price, feliciPrice){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
-            feliciPrice = 100
+            feliciPrice = 70
             felicidad += feliciPrice
             felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
             checkFelicidad()
@@ -476,11 +476,12 @@ sunRedBtn.onclick = function(price){
 }
 
 /// lentes gold
-sunGoldBtn.onclick = function(price){
+sunGoldBtn.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
     price = 100
     priceText.textContent = price
+
 
     if(compradoSRed === true){
         sunBlackHead .style.display = "none";
@@ -506,6 +507,12 @@ sunGoldBtn.onclick = function(price){
             popUp.style.display = "none";
            
             sunGoldBtn.className = "comprado"
+
+            feliciPrice = 70
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+            
         } else {
             errorBudget.style.display = "flex"
             popUp.style.display = 'none'

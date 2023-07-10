@@ -444,13 +444,17 @@ inputNombre.addEventListener('input', function() {
 
     }, 500)
 
-    setTimeout(function(){
+  /*   setTimeout(function(){
        
         document.getElementById('gracias').style.display='none'
         
  
-     }, 15000)
-  });
+     }, 15000) */
+  })
+document.getElementById("gracias-next").onclick = function(){
+  document.getElementById('gracias').style.display='none'
+}
+
 
 ///// MENU FOTOS
 
@@ -474,7 +478,7 @@ btnFotos.onclick = function() {
 ///dni
 document.getElementById("perfil-huevo-card").onclick = function(){
     document.getElementById("dni").style.display = "flex"
-    //document.getElementById('todo').style.display='none'
+    document.getElementById('todo').style.display='none'
 }
 
 document.getElementById("back-dni").onclick = function(feliciPrice){
