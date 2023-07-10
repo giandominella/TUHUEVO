@@ -1,10 +1,10 @@
 let moneyActualEl = document.getElementById('moneyActual')
-let moneyActual = 110
+let moneyActual = 500
 moneyActualEl.textContent += moneyActual
 let errorBudget = document.getElementById("error-budget")
 
 let felicidadActualEl = document.getElementById('felicidadActual')
-let felicidad = 200
+let felicidad = 300
 felicidadActualEl.textContent += felicidad
 let caraFeliz = document.getElementById('cara-feliz')
 let caraMeh = document.getElementById('cara-meh')
@@ -17,7 +17,7 @@ let btn = document.getElementById("herramientas-happiness");
 let span = document.getElementsByClassName("close")[0];
 
 function checkFelicidad(){
-    if( felicidad >= 200){
+    if( felicidad >= 300){
         caraFeliz.style.display = "flex"
         caraTriste.style.display = "none"
         caraMeh.style.display = "none"
@@ -26,7 +26,7 @@ function checkFelicidad(){
         document.getElementById("cara-triste-emoji").style.display = "none"
 
     } 
-    if (felicidad < 200) {
+    if (felicidad < 300) {
         caraFeliz.style.display = "none"
         caraMeh.style.display = "flex"
         caraTriste.style.display = "none"
@@ -177,17 +177,22 @@ function cuantoGanaste(price) {
 
 
 //// monedas-email
-document.getElementById("aceptar-email").onclick = function(price){
+document.getElementById("aceptar-email").onclick = function(price, feliciPrice){
     menuMonedas.style.display = "none"
-    price = 100
+    price = 500
     cuantoGanaste(price)
     document.getElementById("email-card").style.display = "none"
+
+    feliciPrice = 20
+    felicidad += feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
 }
 
 
 document.getElementById("ignorar-email").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
-    feliciPrice = 100
+    feliciPrice = 50
     felicidad -= feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
@@ -196,11 +201,16 @@ document.getElementById("ignorar-email").onclick = function(feliciPrice){
  
 }
 //// monedas-twitter
-document.getElementById("aceptar-twitter").onclick = function(price){
+document.getElementById("aceptar-twitter").onclick = function(price, feliciPrice){
     menuMonedas.style.display = "none"
-    price = 50
+    price = 300
     cuantoGanaste(price)
     document.getElementById("twitter-card").style.display = "none"
+
+    feliciPrice = 20
+    felicidad += feliciPrice
+    felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+    checkFelicidad()
 
 }
 
@@ -263,10 +273,10 @@ inputCodigo.addEventListener('input', function() {
 
 btnAceptarPay.addEventListener('click', function(price, feliciPrice){    
     menuMonedas.style.display = "none"
-    price = 1000
+    price = 1100
     cuantoGanaste(price)
 
-    feliciPrice = 200
+    feliciPrice = 50
     felicidad += feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
@@ -277,7 +287,7 @@ btnAceptarPay.addEventListener('click', function(price, feliciPrice){
 
 document.getElementById("ignorar-pay").onclick = function(feliciPrice){
     menuMonedas.style.display = "none"
-    feliciPrice = 400
+    feliciPrice = 100
     felicidad -= feliciPrice
     felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
     checkFelicidad()
@@ -303,7 +313,7 @@ btnMic.addEventListener('click', function() {
       .then(function(stream, price) {
         // Acceso al micrófono otorgado
         console.log('Acceso al micrófono otorgado.');
-        price = 700
+        price = 1500
         cuantoGanaste(price)
         menuMonedas.style.display = "none"
         document.getElementById("mic-card").style.display = "none"
@@ -318,7 +328,7 @@ btnMic.addEventListener('click', function() {
       })
       .catch(function(error, feliciPrice) {
         console.error('Error al acceder al micrófono:', error);
-        feliciPrice = 150
+        feliciPrice = 100
         felicidad -= feliciPrice
         felicidadActualEl.textContent = felicidad
         checkFelicidad()
@@ -538,10 +548,10 @@ direcInput.addEventListener('input', function() {
 
 giftEnviar.addEventListener('click', function(price, feliciPrice){    
   menuMonedas.style.display = "none"
-  price = 1100
+  price = 1000
   cuantoGanaste(price)
 
-  feliciPrice = 100
+  feliciPrice = 50
   felicidad += feliciPrice
   felicidadActualEl.textContent = felicidad
   checkFelicidad()

@@ -42,10 +42,10 @@ document.getElementById("none-ribbon").onclick = function(){
     ribbonGoldHead.style.display = "none";
 }
 //RIBBON ROJO
-ribbonRojoBoton.onclick = function(price){
+ribbonRojoBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 10
+    price = 300
     priceText.textContent = price
 
     if(compradoR1 === true){
@@ -75,6 +75,11 @@ ribbonRojoBoton.onclick = function(price){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none";
            
+            feliciPrice = 10
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             ribbonRojoBoton.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -86,11 +91,11 @@ ribbonRojoBoton.onclick = function(price){
     }
 }
 //RIBBON AQUA 
-ribbonAquaBoton.onclick = function(price){
+ribbonAquaBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
 
-    price = 10
+    price = 300
     priceText.textContent = price
     
     if(compradoR2 === true){
@@ -120,6 +125,11 @@ ribbonAquaBoton.onclick = function(price){
         moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
         document.getElementById("comprar-popup").style.display = "none";
 
+        feliciPrice = 10
+        felicidad += feliciPrice
+        felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+        checkFelicidad()
+
         ribbonAquaBoton.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -128,10 +138,10 @@ ribbonAquaBoton.onclick = function(price){
     }
 }
 //RIBBON AZUL
-ribbonAzulBoton.onclick = function(price){
+ribbonAzulBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 20
+    price = 300
     priceText.textContent = price
     if(compradoR3 === true){
         ribbonRojoHead .style.display = "none";
@@ -160,6 +170,11 @@ ribbonAzulBoton.onclick = function(price){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none";
 
+            feliciPrice = 10
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             ribbonAzulBoton.className = "comprado"
             } else {
             errorBudget.style.display = "flex"
@@ -168,10 +183,10 @@ ribbonAzulBoton.onclick = function(price){
     }
 }
 //RIBBON VIOLETA
-ribbonVioletaBoton.onclick = function(price){
+ribbonVioletaBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 20
+    price = 500
     priceText.textContent = price
     if(compradoR4 === true){
         ribbonRojoHead .style.display = "none";
@@ -200,6 +215,11 @@ ribbonVioletaBoton.onclick = function(price){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
+            feliciPrice = 50
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             ribbonVioletaBoton.className = "comprado"
             } else {
                 errorBudget.style.display = "flex"
@@ -208,11 +228,12 @@ ribbonVioletaBoton.onclick = function(price){
     }
 }
 //RIBBON NARANJA
-ribbonNaranjaBoton.onclick = function(price){
+ribbonNaranjaBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 20
+    price = 500
     priceText.textContent = price
+
     if(compradoR5 === true){
         ribbonRojoHead .style.display = "none";
         ribbonAquaHead.style.display = "none";
@@ -240,6 +261,11 @@ ribbonNaranjaBoton.onclick = function(price){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
+            feliciPrice = 50
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+            
             ribbonNaranjaBoton.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -252,7 +278,7 @@ ribbonNaranjaBoton.onclick = function(price){
 ribbonGoldBoton.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 1000
+    price = 1500
     priceText.textContent = price
 
 
@@ -285,7 +311,7 @@ ribbonGoldBoton.onclick = function(price, feliciPrice){
             moneyActualEl.textContent = moneyActual //"Money: " + moneyActual
             document.getElementById("comprar-popup").style.display = "none"
 
-            feliciPrice = 70
+            feliciPrice = 100
             felicidad += feliciPrice
             felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
             checkFelicidad()
@@ -353,10 +379,10 @@ document.getElementById("none-sun").onclick = function(){
 }
 
 ///lentes black
-sunBlackBtn.onclick = function(price){
+sunBlackBtn.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 10
+    price = 300
     priceText.textContent = price
 
     if(compradoSBlack === true){
@@ -382,6 +408,11 @@ sunBlackBtn.onclick = function(price){
             moneyActualEl.textContent = moneyActual
             popUp.style.display = "none";
            
+            feliciPrice = 10
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             sunBlackBtn.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -394,10 +425,10 @@ sunBlackBtn.onclick = function(price){
 }
 
 ///lentes aqua
-sunAquaBtn.onclick = function(price){
+sunAquaBtn.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 20
+    price = 400
     priceText.textContent = price
 
     if(compradoSBlack === true){
@@ -423,6 +454,11 @@ sunAquaBtn.onclick = function(price){
             moneyActualEl.textContent = moneyActual
             popUp.style.display = "none";
            
+            feliciPrice = 25
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             sunAquaBtn.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -435,10 +471,10 @@ sunAquaBtn.onclick = function(price){
 }
 
 ///lentes red
-sunRedBtn.onclick = function(price){
+sunRedBtn.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 25
+    price = 400
     priceText.textContent = price
 
     if(compradoSRed === true){
@@ -464,6 +500,11 @@ sunRedBtn.onclick = function(price){
             moneyActualEl.textContent = moneyActual
             popUp.style.display = "none";
            
+            feliciPrice = 25
+            felicidad += feliciPrice
+            felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+            checkFelicidad()
+
             sunRedBtn.className = "comprado"
         } else {
             errorBudget.style.display = "flex"
@@ -479,7 +520,7 @@ sunRedBtn.onclick = function(price){
 sunGoldBtn.onclick = function(price, feliciPrice){
     errorBudget.style.display = "none"
     popUp.style.display = 'none'
-    price = 100
+    price = 800
     priceText.textContent = price
 
 
@@ -508,7 +549,7 @@ sunGoldBtn.onclick = function(price, feliciPrice){
            
             sunGoldBtn.className = "comprado"
 
-            feliciPrice = 70
+            feliciPrice = 50
             felicidad += feliciPrice
             felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
             checkFelicidad()

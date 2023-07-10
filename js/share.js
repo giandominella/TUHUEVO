@@ -2,12 +2,17 @@
 
 let shareButton = document.getElementById('shareDNI');
 
-shareButton.addEventListener('click', function(price) {
-  price = 200
+shareButton.addEventListener('click', function(price, feliciPrice) {
+  price = 800
   cuantoGanaste(price)
   let imageElement = document.getElementById('img-dni');
   document.getElementById("dni").style.display = "none"
   document.getElementById('todo').style.display='flex'
+
+  feliciPrice = 50
+  felicidad += feliciPrice
+  felicidadActualEl.textContent = felicidad //"Happiness: " + felicidad
+  checkFelicidad()
 
   if (navigator.share) {
     fetch(imageElement.src)
